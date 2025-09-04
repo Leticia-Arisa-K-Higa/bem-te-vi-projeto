@@ -29,14 +29,19 @@ class ExamSide {
 
 @JsonSerializable()
 class Exam {
-  final String patientIdentifier;
+  final String patientName;
+  final String examDate;
+  final String examinerName;
+
   final ExamSide right;
   final ExamSide left;
   final String voluntaryAnalContraction;
   final String deepAnalPressure;
 
   Exam({
-    required this.patientIdentifier,
+    required this.patientName,
+    required this.examDate,
+    required this.examinerName,
     required this.right,
     required this.left,
     required this.voluntaryAnalContraction,

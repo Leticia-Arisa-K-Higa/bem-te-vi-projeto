@@ -13,7 +13,9 @@ class ExamSide(BaseModel):
     lowestNonKeyMuscleWithMotorFunction: Optional[str] = None
 
 class Exam(BaseModel):
-    patientIdentifier: str
+    patientName: str
+    examDate: str 
+    examinerName: str
     right: ExamSide
     left: ExamSide
     voluntaryAnalContraction: str

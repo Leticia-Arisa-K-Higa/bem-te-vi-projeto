@@ -10,7 +10,10 @@ class AsiaFormProvider extends ChangeNotifier {
   IscnsciResult? _result;
   IscnsciResult? get result => _result;
 
-  String _patientIdentifier = '';
+  // Variáveis antigas removidas e novas adicionadas
+  String _patientName = '';
+  String _examDate = '';
+  String _examinerName = '';
 
   String? _voluntaryAnalContraction;
   String? _deepAnalPressure;
@@ -54,15 +57,25 @@ class AsiaFormProvider extends ChangeNotifier {
   }
 
   List<NeurologyCellData> get cells => _cells;
-  String get patientIdentifier => _patientIdentifier;
   String? get voluntaryAnalContraction => _voluntaryAnalContraction;
   String? get deepAnalPressure => _deepAnalPressure;
   String? get rightLowestNonKeyMuscle => _rightLowestNonKeyMuscle;
   String? get leftLowestNonKeyMuscle => _leftLowestNonKeyMuscle;
   String get comments => _comments;
 
-  void setPatientIdentifier(String value) {
-    _patientIdentifier = value;
+  // Métodos "setter" para os novos campos
+  void setPatientName(String value) {
+    _patientName = value;
+    notifyListeners();
+  }
+
+  void setExamDate(String value) {
+    _examDate = value;
+    notifyListeners();
+  }
+
+  void setExaminerName(String value) {
+    _examinerName = value;
     notifyListeners();
   }
 
@@ -190,8 +203,9 @@ class AsiaFormProvider extends ChangeNotifier {
     }
 
     return Exam(
-      patientIdentifier: _patientIdentifier,
-
+      patientName: _patientName,
+      examDate: _examDate,
+      examinerName: _examinerName,
       right: ExamSide(
         motor: rightMotor,
         lightTouch: rightLt,
@@ -241,6 +255,12 @@ class AsiaFormProvider extends ChangeNotifier {
     _rightLowestNonKeyMuscle = null;
     _leftLowestNonKeyMuscle = null;
     _comments = '';
+
+    // ATUALIZADO AQUI
+    _patientName = '';
+    _examDate = '';
+    _examinerName = '';
+
     notifyListeners();
   }
 }

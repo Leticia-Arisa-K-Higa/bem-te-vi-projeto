@@ -61,6 +61,8 @@ def create_gas_evaluation(eval_data: GasEvaluation):
 
         for goal_data in result['detailed_goals']:
             raw_goal = goal_data['raw_goal']
+
+            print("CHAVES DISPONÍVEIS NO DICIONÁRIO:", goal_data.keys())
             
             cursor.execute(
                 """
@@ -68,15 +70,16 @@ def create_gas_evaluation(eval_data: GasEvaluation):
                     avaliacao_gas_id, meta_id_original, descricao, importancia, dificuldade,
                     linha_de_base, alcancado, ponderacao1, ponderacao2_peso,
                     ponderacao3_base_ponderada, ponderacao4_alcancado_ponderado,
-                    -- Novas colunas
                     desc_piora, desc_linha_base, desc_esperado, 
                     desc_melhor_esperado, desc_muito_melhor
                 ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
                 """,
                 (
                     avaliacao_id, raw_goal.id, raw_goal.description, raw_goal.importance, raw_goal.difficulty,
-                    raw_goal.baseline, raw_goal.achieved, goal_data['ponderation1'],
-                    goal_data['ponderation2_peso'], goal_data['ponderation3_base_ponderada'],
+                    raw_goal.baseline, raw_goal.achieved,
+                    goal_data['ponderation1'],
+                    goal_data['ponderation2_peso'],
+                    goal_data['ponderation3_base_ponderada'],
                     goal_data['ponderacao4_alcancado_ponderado'],
                     raw_goal.level_minus_2, raw_goal.level_minus_1, raw_goal.level_0,
                     raw_goal.level_plus_1, raw_goal.level_plus_2
@@ -109,12 +112,12 @@ def create_exam_and_calculate(exam_data: Exam):
         conn = get_db_connection()
         cursor = conn.cursor()
 
-        cursor.execute("SELECT id FROM pacientes WHERE nome_completo = %s;", (exam_data.patientIdentifier,))
+        cursor.execute("SELECT id FROM pacientes WHERE nome_completo = %s;", (exam_data.patientName,))
         paciente = cursor.fetchone()
         if paciente:
             paciente_id = paciente[0]
         else:
-            cursor.execute("INSERT INTO pacientes (nome_completo) VALUES (%s) RETURNING id;", (exam_data.patientIdentifier,))
+            cursor.execute("INSERT INTO pacientes (nome_completo) VALUES (%s) RETURNING id;", (exam_data.patientName,))
             paciente_id = cursor.fetchone()[0]
 
         classificacao = result['classification']
@@ -122,34 +125,39 @@ def create_exam_and_calculate(exam_data: Exam):
         zpp = classificacao['zoneOfPartialPreservations']
         neuro_levels = classificacao['neurologicalLevels']
         
-
         cursor.execute(
             """
             INSERT INTO avaliacoes_asia (
-                paciente_id, contracao_anal_voluntaria, pressao_anal_profunda,
+                paciente_id, data_exame, nome_examinador, 
+                contracao_anal_voluntaria, pressao_anal_profunda,
                 lowest_non_key_muscle_right, lowest_non_key_muscle_left,
                 nivel_sensorial_direito, nivel_sensorial_esquerdo, nivel_motor_direito, nivel_motor_esquerdo,
                 nivel_neurologico_lesao, classificacao_completude, escala_asia,
                 zpp_sensorial_direito, zpp_sensorial_esquerdo, zpp_motor_direito, zpp_motor_esquerdo,
                 total_uems_direito, total_uems_esquerdo, total_lems_direito, total_lems_esquerdo,
                 total_lt_direito, total_lt_esquerdo, total_pp_direito, total_pp_esquerdo
-            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             RETURNING id;
             """,
             (
-                paciente_id, exam_data.voluntaryAnalContraction, exam_data.deepAnalPressure,
-                exam_data.right.lowestNonKeyMuscleWithMotorFunction, exam_data.left.lowestNonKeyMuscleWithMotorFunction,
-                
-                neuro_levels['sensoryRight'], neuro_levels['sensoryLeft'],
-                neuro_levels['motorRight'], neuro_levels['motorLeft'],
-                
+                paciente_id,
+                exam_data.examDate,
+                exam_data.examinerName,   
+                exam_data.voluntaryAnalContraction,
+                exam_data.deepAnalPressure,
+                exam_data.right.lowestNonKeyMuscleWithMotorFunction,
+                exam_data.left.lowestNonKeyMuscleWithMotorFunction,
+                neuro_levels['sensoryRight'],
+                neuro_levels['sensoryLeft'],
+                neuro_levels['motorRight'],
+                neuro_levels['motorLeft'],
                 classificacao['neurologicalLevelOfInjury'],
                 'Completa' if 'C' in classificacao['injuryComplete'] else 'Incompleta', 
                 classificacao['asiaImpairmentScale'],
-                
-                zpp['sensoryRight'], zpp['sensoryLeft'], 
-                zpp['motorRight'], zpp['motorLeft'],  
-                
+                zpp['sensoryRight'],
+                zpp['sensoryLeft'], 
+                zpp['motorRight'],
+                zpp['motorLeft'],  
                 None if totais['upperExtremityRight'] == 'ND' else totais['upperExtremityRight'], 
                 None if totais['upperExtremityLeft'] == 'ND' else totais['upperExtremityLeft'],
                 None if totais['lowerExtremityRight'] == 'ND' else totais['lowerExtremityRight'], 
@@ -182,7 +190,6 @@ def create_exam_and_calculate(exam_data: Exam):
             conn.close()
 
     return result
-
 
 @app.post("/api/v1/anamneses", summary="Salva um novo formulário de Anamnese", status_code=status.HTTP_201_CREATED)
 def create_anamnese(anamnese: AnamneseCreate):

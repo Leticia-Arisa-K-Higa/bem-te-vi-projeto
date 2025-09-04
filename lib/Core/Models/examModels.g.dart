@@ -23,7 +23,9 @@ Map<String, dynamic> _$ExamSideToJson(ExamSide instance) => <String, dynamic>{
 };
 
 Exam _$ExamFromJson(Map<String, dynamic> json) => Exam(
-  patientIdentifier: json['patientIdentifier'] as String,
+  patientName: json['patientName'] as String,
+  examDate: json['examDate'] as String,
+  examinerName: json['examinerName'] as String,
   right: ExamSide.fromJson(json['right'] as Map<String, dynamic>),
   left: ExamSide.fromJson(json['left'] as Map<String, dynamic>),
   voluntaryAnalContraction: json['voluntaryAnalContraction'] as String,
@@ -31,7 +33,9 @@ Exam _$ExamFromJson(Map<String, dynamic> json) => Exam(
 );
 
 Map<String, dynamic> _$ExamToJson(Exam instance) => <String, dynamic>{
-  'patientIdentifier': instance.patientIdentifier,
+  'patientName': instance.patientName,
+  'examDate': instance.examDate,
+  'examinerName': instance.examinerName,
   'right': instance.right,
   'left': instance.left,
   'voluntaryAnalContraction': instance.voluntaryAnalContraction,

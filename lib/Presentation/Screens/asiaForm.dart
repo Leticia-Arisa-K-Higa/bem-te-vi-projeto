@@ -447,20 +447,43 @@ class AsiaForm extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Identificação do Paciente',
+              'Identificação',
               style: Theme.of(
                 context,
               ).textTheme.titleLarge?.copyWith(color: Colors.white),
             ),
-            const SizedBox(height: 8),
-            // Usando seu CustomTextField para manter o estilo
+            const SizedBox(height: 16),
+
+            // O primeiro campo foi removido. Agora começa direto com o Nome do Paciente.
             CustomTextField(
-              labelText: 'Nome ou Prontuário',
-              // Conecta o campo de texto ao provider
+              labelText: 'Nome do Paciente',
               onChanged: (value) {
-                provider.setPatientIdentifier(value);
+                provider.setPatientName(value);
               },
-              // Define as cores para combinar com o card
+              textColor: Colors.white,
+              labelColor: Colors.white70,
+              cursorColor: Colors.white,
+              borderColor: Colors.white54,
+            ),
+            const SizedBox(height: 12),
+
+            CustomTextField(
+              labelText: 'Data do Exame',
+              onChanged: (value) {
+                provider.setExamDate(value);
+              },
+              textColor: Colors.white,
+              labelColor: Colors.white70,
+              cursorColor: Colors.white,
+              borderColor: Colors.white54,
+            ),
+            const SizedBox(height: 12),
+
+            CustomTextField(
+              labelText: 'Nome do Examinador',
+              onChanged: (value) {
+                provider.setExaminerName(value);
+              },
               textColor: Colors.white,
               labelColor: Colors.white70,
               cursorColor: Colors.white,
