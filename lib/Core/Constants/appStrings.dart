@@ -6,7 +6,7 @@ class AppStrings {
   // Drawer
   static const String formAsia = 'ASIA';
   static const String formGas = 'GAS';
-  static const String formAnmenese = 'Anmenese';
+  static const String formAnmenese = 'Ananmese';
 
   // ASIA form
   static const String asiaFormTitle = 'Classificação ISNCSCI (ASIA)';
@@ -163,7 +163,9 @@ class AppStrings {
   static const String secundaryCategory12 = 'Adaptação ambiental';
 
   // Formulário anmenese
-  static const anmeneseTitle = 'Formulário Anmenese';
+  static const anmeneseTitle = 'Formulário Ananmese';
+
+  // Formulário MEEM
 }
 
 class AppColors {

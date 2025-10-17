@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:projeto/Core/Constants/appStrings.dart';
-import 'package:projeto/Core/Models/neurologyCellData.dart'; // Ajuste os imports
+import 'package:projeto/Core/Models/neurologyCellData.dart';
 import 'package:projeto/Presentation/Widgets/MotorInputCard.dart';
 import 'package:projeto/Presentation/Widgets/SensoryInputCard.dart';
 
 class LevelInputCard extends StatelessWidget {
-  // Exemplo de nome para sua tela
-  final List<NeurologyCellData>
-  todasAsCelulas; // A tela deve receber a lista completa de células
+  final List<NeurologyCellData> todasAsCelulas;
   final Function(String id, String? value) onCellValueChanged;
 
   const LevelInputCard({
@@ -56,11 +54,8 @@ class LevelInputCard extends StatelessWidget {
               ),
               // Cria a lista de cards sensoriais, um para cada nível
               ...AppStrings.sensoryLevels.map((level) {
-                // Supondo que você tenha uma lista de todos os níveis
                 return SensoryInputCard(
                   level: level,
-                  // Você precisará passar as células corretas aqui, usando um helper
-                  // (Esta parte pode precisar de ajuste dependendo de como você busca os dados)
                   rightLightTouchCell: getSensoryCellsForLevel(level)
                       .firstWhere(
                         (c) =>
@@ -98,13 +93,11 @@ class LevelInputCard extends StatelessWidget {
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                 ),
               ),
-              // O novo Card Motor para o lado DIREITO
               MotorInputCard(
                 side: Side.right,
                 motorCellsForSide: motorDireitoCells,
                 onCellValueChanged: onCellValueChanged,
               ),
-              // O novo Card Motor para o lado ESQUERDO
               MotorInputCard(
                 side: Side.left,
                 motorCellsForSide: motorEsquerdoCells,

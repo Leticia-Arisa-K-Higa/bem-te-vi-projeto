@@ -177,23 +177,16 @@ class AsiaForm extends StatelessWidget {
                     elevation: 5,
                   ),
                   onPressed: () async {
-                    // 1. Marcamos a função como 'async' para poder esperar a API.
-
-                    // 2. Pegamos uma referência ao provider para acessar os dados.
-                    // Usamos 'listen: false' porque estamos dentro de uma função, não construindo a UI.
                     final asiaProvider = Provider.of<AsiaFormProvider>(
                       context,
                       listen: false,
                     );
 
-                    // 3. Usamos o método do provider para empacotar todos os dados do formulário.
                     final examToSubmit = asiaProvider.createExamFromCells();
 
-                    // 4. Criamos uma instância do nosso serviço de API.
                     final apiService = ApiService();
 
                     try {
-                      // 5. Mostramos um diálogo de "carregando" para o usuário saber que algo está acontecendo.
                       showDialog(
                         context: context,
                         barrierDismissible: false,
@@ -201,14 +194,12 @@ class AsiaForm extends StatelessWidget {
                             const Center(child: CircularProgressIndicator()),
                       );
 
-                      // 6. O GRANDE MOMENTO: Enviamos o exame para a API e esperamos ('await') a resposta.
                       final IscnsciResult result = await apiService.submitExam(
                         examToSubmit,
                       );
 
                       asiaProvider.setFinalResult(result);
 
-                      // 7. Se chegamos aqui, a API funcionou! Primeiro, fechamos o diálogo de "carregando".
                       Navigator.of(context).pop();
 
                       ScaffoldMessenger.of(context).showSnackBar(
@@ -218,8 +209,6 @@ class AsiaForm extends StatelessWidget {
                         ),
                       );
                     } catch (e) {
-                      // 9. Se algo der errado na API (ex: sem internet, servidor Python desligado),
-                      // fechamos o "carregando" e mostramos uma mensagem de erro.
                       Navigator.of(context).pop();
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
@@ -247,14 +236,10 @@ class AsiaForm extends StatelessWidget {
     );
   }
 
-  // 4. O MÉTODO _buildLevelInputCards FOI REMOVIDO.
-  //    VOCÊ PODE DELETAR ELE COMPLETAMENTE DO SEU ARQUIVO.
-
   Widget _buildAnalSensationSelectors(
     BuildContext context,
     AsiaFormProvider provider,
   ) {
-    // Este método e os outros abaixo permanecem exatamente iguais.
     return Card(
       color: AppColors.emerald,
       elevation: 2,
@@ -412,7 +397,7 @@ class AsiaForm extends StatelessWidget {
               'Comentários:',
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 color: Colors.white,
-              ), // O título já estava correto
+              ), 
             ),
             const SizedBox(height: 8),
             CustomTextField(
@@ -420,12 +405,11 @@ class AsiaForm extends StatelessWidget {
               initialValue: provider.comments,
               onChanged: provider.setComments,
               maxLines: 5,
-              // 3. PASSANDO AS CORES DESEJADAS
-              textColor: Colors.white, // Cor do texto digitado
+              textColor: Colors.white, 
               labelColor: Colors
-                  .white70, // Cor do label (um pouco transparente fica bom)
-              cursorColor: Colors.white, // Cor do cursor
-              borderColor: Colors.white54, // Cor da borda (também transparente)
+                  .white70, 
+              cursorColor: Colors.white, 
+              borderColor: Colors.white54, 
             ),
           ],
         ),
@@ -454,7 +438,6 @@ class AsiaForm extends StatelessWidget {
             ),
             const SizedBox(height: 16),
 
-            // O primeiro campo foi removido. Agora começa direto com o Nome do Paciente.
             CustomTextField(
               labelText: 'Nome do Paciente',
               onChanged: (value) {

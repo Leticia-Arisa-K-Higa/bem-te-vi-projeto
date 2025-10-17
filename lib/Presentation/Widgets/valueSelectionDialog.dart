@@ -46,7 +46,7 @@ class ValueSelectionDialog extends StatelessWidget {
       ),
       actions: [
         TextButton(
-          onPressed: () => Navigator.of(context).pop(), // Retorna null
+          onPressed: () => Navigator.of(context).pop(),
           child: const Text('Cancelar'),
         ),
       ],
@@ -54,13 +54,12 @@ class ValueSelectionDialog extends StatelessWidget {
   }
 }
 
-// Widget interno para o botão de valor
 class _ValueButton extends StatelessWidget {
   final String value;
   final ValueChanged<String> onTap;
   final bool isSelected;
-  final bool isNormalMotorScore; // Indica se é a pontuação 5 (não tem *)
-  final bool isFlag; // Indica se é um valor com *
+  final bool isNormalMotorScore;
+  final bool isFlag;
 
   const _ValueButton({
     required this.value,

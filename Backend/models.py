@@ -51,3 +51,49 @@ class AnamneseCreate(BaseModel):
     examDate: date
     birthDate: date
     comments: Optional[str] = None
+
+
+class MuscleMeasurement(BaseModel):
+    """Dados de medição para um lado de um músculo."""
+    reobase: Optional[float] = None
+    accommodation: Optional[float] = None
+    chronaxy: Optional[float] = None
+    accommodationIndex: Optional[str] = None
+
+class MuscleEvaluation(BaseModel):
+    """Agrupa os dados de um músculo específico."""
+    muscleName: str
+    right: MuscleMeasurement
+    left: MuscleMeasurement
+    comments: Optional[str] = None
+
+class ElectrodiagnosisCreate(BaseModel):
+    """Modelo principal para receber um novo formulário de Eletrodiagnóstico."""
+    patientName: str
+    examinerName: str
+    examDate: str 
+    equipmentName: str
+    muscles: List[MuscleEvaluation]
+
+class PontosMeem(BaseModel):
+    """Agrupa todos os pontos individuais do exame MEEM."""
+    orientacaoTemporal: List[int]
+    orientacaoEspacial: List[int]
+    memoriaImediata: List[int]
+    atencaoCalculo: List[int]
+    memoriaEvocativa: List[int]
+    linguagemNomear: List[int]
+    linguagemRepetir: int
+    linguagemComandoVerbal: List[int]
+    linguagemComandoEscrito: int
+    linguagemFrase: int
+    linguagemCopia: int
+
+class MeemCreate(BaseModel):
+    """Modelo principal para receber um novo formulário MEEM."""
+    patientName: str
+    examDate: date
+    examinerName: Optional[str] = None
+    age: int
+    escolaridade: str
+    pontos: PontosMeem

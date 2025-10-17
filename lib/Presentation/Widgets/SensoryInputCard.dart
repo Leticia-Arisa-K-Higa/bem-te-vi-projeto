@@ -53,21 +53,15 @@ class _SensoryInputCardState extends State<SensoryInputCard> {
         height: 300,
         child: IntrinsicHeight(
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment
-                .stretch, // Estica os filhos para preencher a altura
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: imagePaths
                 .map(
                   (path) => Expanded(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                      // Usamos um Container para um melhor controle e para adicionar um ClipRRect
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
-                        child: Image.asset(
-                          path,
-                          fit: BoxFit
-                              .contain, // Garante que a imagem caiba sem distorção
-                        ),
+                        child: Image.asset(path, fit: BoxFit.contain),
                       ),
                     ),
                   ),
@@ -123,7 +117,6 @@ class _SensoryInputCardState extends State<SensoryInputCard> {
               ),
               child: Column(
                 children: [
-                  // Conteúdo dos inputs (inalterado)
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8.0),
                     child: Row(
@@ -218,7 +211,6 @@ class _SensoryInputCardState extends State<SensoryInputCard> {
                     ],
                   ),
 
-                  // Exibição condicional da imagem
                   if (_isExpanded) _buildContextualImages(),
                 ],
               ),

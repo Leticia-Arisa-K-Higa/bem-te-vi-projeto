@@ -60,7 +60,7 @@ class _AnmeneseFormState extends State<AnmeneseForm> {
 
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Anamnese salva com sucesso!'),
+          content: Text('Ananese salva com sucesso!'),
           backgroundColor: Colors.green,
         ),
       );
@@ -137,7 +137,7 @@ class _AnmeneseFormState extends State<AnmeneseForm> {
                           elevation: 5,
                         ),
                         child: const Text(
-                          'Salvar Anamnese',
+                          'Salvar Ananese',
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -145,6 +145,27 @@ class _AnmeneseFormState extends State<AnmeneseForm> {
                           ),
                         ),
                       ),
+                const SizedBox(height: 16),
+
+                OutlinedButton.icon(
+                  icon: const Icon(Icons.psychology_outlined),
+                  label: const Text('Iniciar Mini-Exame Mental (MEEM)'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/meem_form');
+                  },
+                  style: OutlinedButton.styleFrom(
+                    foregroundColor: AppColors.emerald,
+                    side: const BorderSide(color: AppColors.emerald, width: 2),
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    textStyle: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

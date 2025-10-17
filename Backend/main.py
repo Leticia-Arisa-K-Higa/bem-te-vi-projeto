@@ -5,6 +5,7 @@ from models import AnamneseCreate, Exam, GasEvaluation
 from asiaCalculator import PraxisIscnsciCalculator
 from gasCalculator import GasCalculator
 from database import get_db_connection
+from models import AnamneseCreate, Exam, GasEvaluation, ElectrodiagnosisCreate, MeemCreate
 
 
 app = FastAPI(title="Bem-Te-Vi API", version="1.0")
@@ -241,3 +242,156 @@ def create_anamnese(anamnese: AnamneseCreate):
             conn.close()
 
     return {"message": "Anamnese salva com sucesso!", "id": new_id, "paciente_id": paciente_id}
+
+@app.post("/api/v1/electrodiagnosis", summary="Salva um novo formulário de Eletrodiagnóstico", status_code=status.HTTP_201_CREATED)
+def create_electrodiagnosis(electro_data: ElectrodiagnosisCreate):
+    conn = None
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        cursor.execute("SELECT id FROM pacientes WHERE nome_completo = %s;", (electro_data.patientName,))
+        paciente = cursor.fetchone()
+
+        if paciente:
+            paciente_id = paciente[0]
+        else:
+            cursor.execute("INSERT INTO pacientes (nome_completo) VALUES (%s) RETURNING id;", (electro_data.patientName,))
+            paciente_id = cursor.fetchone()[0]
+
+        sql_avaliacao = """
+            INSERT INTO avaliacoes_eletrodiagnostico (
+                paciente_id, data_exame, nome_examinador, nome_equipamento
+            ) VALUES (%s, %s, %s, %s)
+            RETURNING id;
+        """
+        cursor.execute(sql_avaliacao, (
+            paciente_id,
+            electro_data.examDate,
+            electro_data.examinerName,
+            electro_data.equipmentName
+        ))
+        avaliacao_id = cursor.fetchone()[0]
+
+
+        sql_medicao = """
+            INSERT INTO medicoes_musculares (
+                avaliacao_id, nome_musculo,
+                reobase_direito, acomodacao_direito, cronaxia_direito,
+                reobase_esquerdo, acomodacao_esquerdo, cronaxia_esquerdo,
+                observacoes,
+                indice_acomodacao_direito,
+                indice_acomodacao_esquerdo
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
+        """
+
+        for muscle in electro_data.muscles:
+
+            cursor.execute(sql_medicao, (
+                avaliacao_id,                
+                muscle.muscleName,              
+                muscle.right.reobase,         
+                muscle.right.accommodation,    
+                muscle.right.chronaxy,         
+                muscle.left.reobase,            
+                muscle.left.accommodation,      
+                muscle.left.chronaxy,          
+                muscle.comments,              
+                muscle.right.accommodationIndex,  
+                muscle.left.accommodationIndex    
+            ))
+
+        conn.commit()
+        print(f"SUCESSO: Eletrodiagnostico ID {avaliacao_id} salvo para o Paciente ID {paciente_id}.")
+
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(f"ERRO DE BANCO DE DADOS (Eletrodiagnóstico): {error}")
+        if conn:
+            conn.rollback()
+        raise HTTPException(status_code=500, detail="Erro ao salvar eletrodiagnóstico no banco de dados.")
+    finally:
+        if conn:
+            cursor.close()
+            conn.close()
+
+    return {"message": "Eletrodiagnóstico salvo com sucesso!", "id": avaliacao_id, "paciente_id": paciente_id}
+
+@app.post("/api/v1/meem-evaluations", summary="Salva um novo formulário MEEM", status_code=status.HTTP_201_CREATED)
+def create_meem_evaluation(meem_data: MeemCreate):
+    conn = None
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        cursor.execute("SELECT id FROM pacientes WHERE nome_completo = %s;", (meem_data.patientName,))
+        paciente = cursor.fetchone()
+
+        if paciente:
+            paciente_id = paciente[0]
+        else:
+            cursor.execute("INSERT INTO pacientes (nome_completo) VALUES (%s) RETURNING id;", (meem_data.patientName,))
+            paciente_id = cursor.fetchone()[0]
+
+        pontos = meem_data.pontos
+        total_score = (
+            sum(pontos.orientacaoTemporal) +
+            sum(pontos.orientacaoEspacial) +
+            sum(pontos.memoriaImediata) +
+            sum(pontos.atencaoCalculo) +
+            sum(pontos.memoriaEvocativa) +
+            sum(pontos.linguagemNomear) +
+            pontos.linguagemRepetir +
+            sum(pontos.linguagemComandoVerbal) +
+            pontos.linguagemComandoEscrito +
+            pontos.linguagemFrase +
+            pontos.linguagemCopia
+        )
+        
+        sql = """
+            INSERT INTO avaliacoes_meem (
+                paciente_id, data_exame, nome_examinador, idade_paciente, escolaridade_paciente,
+                orient_temp_dia_semana, orient_temp_dia_mes, orient_temp_mes, orient_temp_ano, orient_temp_horas,
+                orient_esp_local, orient_esp_edificio, orient_esp_bairro, orient_esp_cidade, orient_esp_estado,
+                mem_imediata_carro, mem_imediata_vaso, mem_imediata_tijolo,
+                atencao_calc_sub1, atencao_calc_sub2, atencao_calc_sub3, atencao_calc_sub4, atencao_calc_sub5,
+                mem_evocativa_carro, mem_evocativa_vaso, mem_evocativa_tijolo,
+                ling_nomear_caneta, ling_nomear_relogio, ling_repetir_frase,
+                ling_comando_mao, ling_comando_dobrar, ling_comando_chao,
+                ling_escrita_ler, ling_escrita_frase, ling_escrita_copia,
+                pontuacao_total
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            RETURNING id;
+        """
+        
+        cursor.execute(sql, (
+            paciente_id, meem_data.examDate, meem_data.examinerName, meem_data.age, meem_data.escolaridade,
+            *pontos.orientacaoTemporal,
+            *pontos.orientacaoEspacial,
+            *pontos.memoriaImediata,
+            *pontos.atencaoCalculo,
+            *pontos.memoriaEvocativa,
+            *pontos.linguagemNomear,
+            pontos.linguagemRepetir,
+            *pontos.linguagemComandoVerbal,
+            pontos.linguagemComandoEscrito,
+            pontos.linguagemFrase,
+            pontos.linguagemCopia,
+            total_score
+        ))
+        
+        new_id = cursor.fetchone()[0]
+        conn.commit()
+        
+        print(f"SUCESSO: Avaliação MEEM ID {new_id} salva para o Paciente ID {paciente_id}.")
+
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(f"ERRO DE BANCO DE DADOS (MEEM): {error}")
+        if conn:
+            conn.rollback()
+        raise HTTPException(status_code=500, detail="Erro ao salvar avaliação MEEM no banco de dados.")
+    finally:
+        if conn:
+            cursor.close()
+            conn.close()
+
+    return {"message": "Avaliação MEEM salva com sucesso!", "id": new_id, "paciente_id": paciente_id}

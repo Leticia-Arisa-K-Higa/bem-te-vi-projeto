@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:projeto/Core/Constants/appStrings.dart';
 import 'package:projeto/Core/Providers/asiaFormProvider.dart';
-import 'package:projeto/Presentation/Screens/anmeneseForm.dart';
+import 'package:projeto/Core/Providers/eletroFormProvider.dart';
+import 'package:projeto/Core/Providers/meemFormProvider.dart';
+import 'package:projeto/Presentation/Screens/ananmeseForm.dart';
 import 'package:projeto/Presentation/Screens/asiaForm.dart';
+import 'package:projeto/Presentation/Screens/eletroForm.dart';
 import 'package:projeto/Presentation/Screens/gasForm.dart';
+import 'package:projeto/Presentation/Screens/meemForm.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -19,6 +23,11 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => AsiaFormProvider()),
+        ChangeNotifierProvider(create: (context) => MeemFormProvider()),
+        ChangeNotifierProvider(create: (context) => MeemFormProvider()),
+        ChangeNotifierProvider(
+          create: (context) => EletrodiagnosticoProvider(),
+        ),
       ],
       child: MaterialApp(
         title: AppStrings.appTitle,
@@ -85,6 +94,8 @@ class MyApp extends StatelessWidget {
           '/asia_form': (context) => const AsiaForm(),
           '/gas_form': (context) => const GasForm(),
           '/anmenese_form': (context) => const AnmeneseForm(),
+          '/meem_form': (context) => const MeemFormScreen(),
+          '/eletro_form': (context) => const EletrodiagnosticoScreen(),
         },
         debugShowCheckedModeBanner: false,
       ),
