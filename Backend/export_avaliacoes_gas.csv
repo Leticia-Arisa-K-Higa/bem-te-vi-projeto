@@ -1,0 +1,26 @@
+nome_completo,id,paciente_id,data_planejamento,data_reavaliacao,plano_intervencao,qi,gas_score_base_calculado,gas_score_alcancado,evolucao,somatorio_p1,somatorio_p2_pesos,somatorio_p3_base,somatorio_p4_alcancado,created_at
+Amanda Fernandes,1,1,2025-05-17,2025-08-15,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,112,50.00,57.81,7.81,45.00,1025.00,0.00,25.00,2025-09-04 02:05:03.489905-03:00
+Sr. Noah Pacheco,2,2,2025-05-14,2025-08-12,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,94,50.00,50.00,0.00,35.00,625.00,0.00,0.00,2025-09-04 02:05:03.614482-03:00
+Ana Luiza Brito,3,3,2025-05-25,2025-08-23,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,107,50.00,50.00,0.00,41.00,625.00,0.00,0.00,2025-09-04 02:05:03.738418-03:00
+Cecília Brito,4,4,2025-05-08,2025-08-06,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,108,50.00,50.00,0.00,51.00,881.00,0.00,0.00,2025-09-04 02:05:03.862760-03:00
+Dr. Luiz Otávio Gomes,5,5,2025-05-25,2025-08-23,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,93,50.00,64.14,14.14,24.00,288.00,0.00,24.00,2025-09-04 02:05:03.987563-03:00
+Lucas Silveira,6,6,2025-05-22,2025-08-20,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,115,50.00,50.00,0.00,29.00,481.00,0.00,0.00,2025-09-04 02:05:04.112348-03:00
+Joaquim Silveira,7,7,2025-05-21,2025-08-19,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,102,50.00,50.00,0.00,40.00,850.00,0.00,0.00,2025-09-04 02:05:04.237579-03:00
+Srta. Manuella da Rosa,8,8,2025-05-21,2025-08-19,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,110,50.00,50.00,0.00,21.00,225.00,0.00,0.00,2025-09-04 02:05:04.362442-03:00
+Pedro Lucas Sales,9,9,2025-05-10,2025-08-08,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,92,50.00,50.00,0.00,32.00,544.00,0.00,0.00,2025-09-04 02:05:04.486549-03:00
+Davi Luiz Costa,10,10,2025-05-10,2025-08-08,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,94,50.00,50.00,0.00,60.00,1250.00,0.00,0.00,2025-09-04 02:05:04.610327-03:00
+Ana Liz Correia,11,11,2025-05-18,2025-08-16,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,112,50.00,50.00,0.00,31.00,481.00,0.00,0.00,2025-09-04 02:05:04.734376-03:00
+Ana Beatriz Nogueira,12,12,2025-05-26,2025-08-24,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,92,50.00,50.00,0.00,24.00,306.00,0.00,0.00,2025-09-04 02:05:04.854629-03:00
+Thiago Vieira,13,13,2025-05-22,2025-08-20,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,109,50.00,50.00,0.00,24.00,288.00,0.00,0.00,2025-09-04 02:05:04.978511-03:00
+Isis da Luz,14,14,2025-05-26,2025-08-24,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,90,50.00,50.00,0.00,27.00,369.00,0.00,0.00,2025-09-04 02:05:05.102477-03:00
+Sarah da Costa,15,15,2025-05-10,2025-08-08,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,92,50.00,54.90,4.90,25.00,337.00,0.00,9.00,2025-09-04 02:05:05.227340-03:00
+Mirella Cirino,16,16,2025-05-25,2025-08-23,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,93,50.00,63.34,13.34,37.00,769.00,0.00,37.00,2025-09-04 02:05:05.351436-03:00
+Nicole Gonçalves,17,17,2025-05-22,2025-08-20,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,97,50.00,63.72,13.72,40.00,850.00,0.00,40.00,2025-09-04 02:05:05.476530-03:00
+Ana Laura Fogaça,18,18,2025-05-26,2025-08-24,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,115,50.00,50.00,0.00,29.00,481.00,0.00,0.00,2025-09-04 02:05:05.601592-03:00
+Ana Carolina Novaes,19,19,2025-05-24,2025-08-22,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,112,50.00,50.00,0.00,30.00,450.00,0.00,0.00,2025-09-04 02:05:05.726565-03:00
+Ágatha Nogueira,20,20,2025-05-07,2025-08-05,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,101,50.00,50.00,0.00,32.00,544.00,0.00,0.00,2025-09-04 02:05:05.850591-03:00
+Benicio Sousa,21,21,2025-05-10,2025-08-08,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,101,50.00,50.00,0.00,37.00,769.00,0.00,0.00,2025-09-04 02:05:05.975296-03:00
+Maria Cecília Fonseca,22,22,2025-05-16,2025-08-14,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,110,50.00,58.00,8.00,21.00,225.00,0.00,12.00,2025-09-04 02:05:06.100410-03:00
+Julia Cirino,23,23,2025-05-27,2025-08-25,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,110,50.00,57.81,7.81,36.00,656.00,0.00,20.00,2025-09-04 02:05:06.221546-03:00
+Théo da Costa,24,24,2025-05-19,2025-08-17,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,98,50.00,50.00,0.00,44.00,706.00,0.00,0.00,2025-09-04 02:05:06.344327-03:00
+Kevin Sá,25,25,2025-05-08,2025-08-06,Plano de reabilitação intensiva com fisioterapia e terapia ocupacional.,97,50.00,56.00,6.00,28.00,400.00,0.00,12.00,2025-09-04 02:05:06.468691-03:00

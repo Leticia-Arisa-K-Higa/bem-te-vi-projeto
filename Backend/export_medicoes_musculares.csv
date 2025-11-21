@@ -1,0 +1,62 @@
+nome_completo,id,avaliacao_id,nome_musculo,reobase_direito,acomodacao_direito,cronaxia_direito,reobase_esquerdo,acomodacao_esquerdo,cronaxia_esquerdo,observacoes,indice_acomodacao_direito,indice_acomodacao_esquerdo
+Amanda Fernandes,49,6,Tríceps Braquial,2.05,1.27,0.66,0.63,1.22,0.20,Delectus maiores placeat rerum labore.,1.09,1.25
+Amanda Fernandes,50,6,Bíceps Braquial,0.90,1.34,0.16,1.13,1.18,0.34,Inventore quasi nam qui vitae.,1.22,1.0
+Sr. Noah Pacheco,51,7,Bíceps Braquial,1.50,1.45,0.51,1.06,1.40,0.34,Laboriosam laborum provident rem laborum soluta distinctio.,1.24,1.21
+Sr. Noah Pacheco,52,7,Extensor Longo dos Dedos,2.21,1.40,0.14,1.55,1.12,0.80,Sint assumenda dignissimos ipsum cupiditate.,1.25,1.16
+Ana Luiza Brito,53,8,Tríceps Braquial,0.74,1.46,0.44,1.21,1.29,0.84,Odio officiis deserunt suscipit rerum eum.,1.18,1.1
+Ana Luiza Brito,54,8,Bíceps Braquial,1.14,1.32,0.83,2.21,1.44,0.25,Necessitatibus ipsum ea.,1.09,1.01
+Cecília Brito,55,9,Bíceps Braquial,2.52,1.30,0.64,0.59,1.45,0.31,Perferendis optio excepturi fuga.,1.12,1.04
+Cecília Brito,56,9,Extensor Longo dos Dedos,2.12,1.31,0.82,1.36,1.19,0.11,Repellendus itaque expedita tempora laborum nam dolorem.,1.24,1.01
+Dr. Luiz Otávio Gomes,57,10,Bíceps Braquial,0.68,1.18,0.41,2.79,1.49,0.27,Vero praesentium est.,1.21,1.07
+Dr. Luiz Otávio Gomes,58,10,Extensor Longo dos Dedos,1.58,1.10,0.20,2.83,1.36,0.38,Animi veniam tempora quam officia voluptate perspiciatis.,1.29,1.23
+Lucas Silveira,59,11,Bíceps Braquial,0.69,1.32,0.37,2.41,1.12,0.36,Voluptate maiores iste cupiditate cum sint distinctio.,1.21,1.13
+Lucas Silveira,60,11,Tibial Anterior,2.04,1.22,0.53,2.80,1.22,0.85,Dicta dicta quidem expedita possimus quos facere odio.,1.25,1.2
+Lucas Silveira,61,11,Tríceps Braquial,1.38,1.38,0.49,2.31,1.24,0.76,Doloremque iusto perferendis tenetur aut.,1.16,1.05
+Joaquim Silveira,62,12,Extensor Longo dos Dedos,2.66,1.34,0.43,1.32,1.23,0.17,Iste eveniet quae dolorum praesentium vitae.,1.24,1.07
+Joaquim Silveira,63,12,Tríceps Braquial,1.63,1.45,0.73,2.61,1.42,0.78,Vel blanditiis aliquam accusamus culpa.,1.1,1.13
+Joaquim Silveira,64,12,Bíceps Braquial,2.18,1.29,0.86,1.77,1.44,0.75,Enim nisi reprehenderit.,1.14,1.21
+Srta. Manuella da Rosa,65,13,Tibial Anterior,1.91,1.31,0.45,0.77,1.19,0.44,Consequatur maiores dolores eveniet voluptatem minus voluptatibus.,1.28,1.29
+Srta. Manuella da Rosa,66,13,Extensor Longo dos Dedos,2.85,1.36,0.27,2.44,1.23,0.46,Facere quidem est eveniet sint sed reiciendis.,1.15,1.21
+Pedro Lucas Sales,67,14,Extensor Longo dos Dedos,1.70,1.17,0.71,2.30,1.34,0.13,Laudantium nam ipsa quod.,1.11,1.17
+Pedro Lucas Sales,68,14,Tríceps Braquial,1.23,1.22,0.15,0.65,1.23,0.31,Ut porro mollitia voluptatem similique.,1.15,1.04
+Davi Luiz Costa,69,15,Bíceps Braquial,2.61,1.46,0.55,2.71,1.42,0.70,Enim placeat magnam nisi dolorum quis.,1.29,1.02
+Davi Luiz Costa,70,15,Extensor Longo dos Dedos,2.45,1.47,0.52,1.36,1.11,0.11,Nemo incidunt illum.,1.27,1.22
+Davi Luiz Costa,71,15,Tríceps Braquial,2.55,1.35,0.18,1.02,1.38,0.69,Optio earum dicta consequuntur ullam.,1.06,1.02
+Ana Liz Correia,72,16,Bíceps Braquial,1.51,1.47,0.38,1.02,1.22,0.24,Iste repellat dolor excepturi quibusdam ratione.,1.17,1.24
+Ana Liz Correia,73,16,Tibial Anterior,2.55,1.24,0.54,0.84,1.14,0.70,Similique occaecati voluptatibus deserunt sunt consequatur perspiciatis alias.,1.04,1.14
+Ana Beatriz Nogueira,74,17,Extensor Longo dos Dedos,1.39,1.37,0.83,2.67,1.36,0.61,Cum officiis eveniet veritatis.,1.28,1.16
+Ana Beatriz Nogueira,75,17,Tríceps Braquial,2.84,1.14,0.65,2.58,1.50,0.13,Error ad repellendus minima rerum voluptas.,1.12,1.11
+Ana Beatriz Nogueira,76,17,Tibial Anterior,2.98,1.30,0.69,1.88,1.16,0.13,Delectus doloribus similique velit omnis optio reiciendis.,1.27,1.15
+Thiago Vieira,77,18,Tríceps Braquial,2.19,1.15,0.81,1.92,1.42,0.59,Suscipit molestiae nam quisquam.,1.19,1.15
+Thiago Vieira,78,18,Tibial Anterior,2.85,1.36,0.32,1.13,1.35,0.75,Nemo fugiat eligendi occaecati eligendi laborum quia placeat.,1.01,1.16
+Isis da Luz,79,19,Tibial Anterior,2.03,1.17,0.47,1.57,1.38,0.83,Maiores autem excepturi blanditiis aperiam doloribus.,1.01,1.09
+Isis da Luz,80,19,Extensor Longo dos Dedos,2.63,1.16,0.39,1.29,1.40,0.74,Magnam dolore nulla nostrum ipsa.,1.12,1.28
+Sarah da Costa,81,20,Tríceps Braquial,0.89,1.29,0.45,1.69,1.27,0.41,Eveniet nam nobis vitae.,1.25,1.22
+Sarah da Costa,82,20,Tibial Anterior,1.35,1.11,0.41,1.50,1.27,0.28,Esse ab amet dolores quaerat recusandae neque.,1.27,1.23
+Sarah da Costa,83,20,Extensor Longo dos Dedos,2.97,1.18,0.75,2.21,1.29,0.88,Excepturi voluptatibus esse odit commodi natus non.,1.17,1.04
+Mirella Cirino,84,21,Extensor Longo dos Dedos,0.72,1.41,0.83,2.99,1.41,0.61,Adipisci placeat in ab dolorem ullam hic.,1.25,1.14
+Mirella Cirino,85,21,Tríceps Braquial,0.70,1.34,0.15,1.06,1.40,0.48,Laboriosam dolor consequuntur.,1.01,1.18
+Nicole Gonçalves,86,22,Tríceps Braquial,2.01,1.13,0.83,2.92,1.32,0.48,Fugit ab maiores nesciunt.,1.29,1.1
+Nicole Gonçalves,87,22,Bíceps Braquial,2.76,1.21,0.33,1.64,1.32,0.36,Autem ipsa voluptatum voluptates sequi.,1.17,1.08
+Nicole Gonçalves,88,22,Tibial Anterior,0.67,1.49,0.83,1.72,1.23,0.83,Quod quas recusandae.,1.22,1.21
+Ana Laura Fogaça,89,23,Tibial Anterior,1.06,1.29,0.51,0.90,1.47,0.59,Repudiandae cumque error quam voluptates repellendus.,1.03,1.19
+Ana Laura Fogaça,90,23,Bíceps Braquial,1.10,1.47,0.57,1.62,1.39,0.23,Vel a iste.,1.06,1.16
+Ana Laura Fogaça,91,23,Tríceps Braquial,1.03,1.45,0.59,1.81,1.22,0.23,Atque explicabo minima cumque debitis.,1.2,1.13
+Ana Carolina Novaes,92,24,Tibial Anterior,2.07,1.41,0.74,1.74,1.39,0.58,Autem quam quas sed est vel tenetur.,1.0,1.02
+Ana Carolina Novaes,93,24,Bíceps Braquial,2.10,1.36,0.33,1.16,1.11,0.28,Accusantium nesciunt minus voluptas eligendi doloribus illum impedit.,1.11,1.02
+Ana Carolina Novaes,94,24,Extensor Longo dos Dedos,0.62,1.24,0.47,1.55,1.28,0.70,Dolorem non odio voluptates iure nostrum aut.,1.26,1.25
+Ágatha Nogueira,95,25,Tibial Anterior,1.98,1.25,0.55,2.72,1.49,0.70,Magni perferendis architecto incidunt assumenda quasi neque.,1.2,1.29
+Ágatha Nogueira,96,25,Extensor Longo dos Dedos,0.77,1.22,0.25,0.74,1.20,0.54,Culpa nam at expedita.,1.14,1.19
+Benicio Sousa,97,26,Extensor Longo dos Dedos,1.35,1.29,0.30,2.61,1.23,0.17,Asperiores repellendus velit eaque dignissimos eligendi officia excepturi.,1.04,1.18
+Benicio Sousa,98,26,Bíceps Braquial,1.90,1.27,0.74,2.13,1.22,0.52,Iure molestiae a nesciunt iusto dolor temporibus necessitatibus.,1.12,1.11
+Benicio Sousa,99,26,Tibial Anterior,1.75,1.32,0.18,2.35,1.45,0.24,Quod dolorem beatae sequi sit explicabo.,1.24,1.3
+Maria Cecília Fonseca,100,27,Tríceps Braquial,2.42,1.33,0.42,2.43,1.12,0.38,Optio similique est distinctio illo cum.,1.03,1.01
+Maria Cecília Fonseca,101,27,Bíceps Braquial,1.68,1.17,0.35,1.29,1.25,0.69,Illum animi inventore tenetur.,1.07,1.09
+Maria Cecília Fonseca,102,27,Tibial Anterior,1.55,1.35,0.20,2.71,1.11,0.23,Sed suscipit aut aperiam nulla rerum inventore.,1.28,1.06
+Julia Cirino,103,28,Extensor Longo dos Dedos,2.60,1.21,0.62,0.97,1.49,0.79,Numquam doloribus quaerat officia hic soluta.,1.09,1.24
+Julia Cirino,104,28,Tríceps Braquial,2.76,1.25,0.15,1.38,1.10,0.78,Dicta iusto odit tempora reprehenderit repellat quia.,1.03,1.16
+Julia Cirino,105,28,Tibial Anterior,2.10,1.24,0.45,1.84,1.44,0.53,Dolores minima quasi inventore.,1.23,1.09
+Théo da Costa,106,29,Extensor Longo dos Dedos,1.26,1.42,0.71,2.08,1.37,0.73,Vel dolor ducimus adipisci corporis aliquid laboriosam.,1.05,1.06
+Théo da Costa,107,29,Tibial Anterior,2.37,1.36,0.81,2.74,1.40,0.70,Tempora quisquam doloribus provident inventore mollitia.,1.04,1.24
+Kevin Sá,108,30,Tibial Anterior,1.33,1.31,0.39,0.74,1.39,0.44,Neque provident suscipit dolor aut commodi sapiente pariatur.,1.08,1.1
+Kevin Sá,109,30,Tríceps Braquial,0.53,1.19,0.80,0.55,1.35,0.19,Omnis et odio quasi vel soluta temporibus.,1.16,1.08

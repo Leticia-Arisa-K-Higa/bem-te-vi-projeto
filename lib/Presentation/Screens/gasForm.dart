@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:projeto/Core/Constants/appStrings.dart';
 import 'package:projeto/Core/Models/GoalsModels.dart';
+import 'package:projeto/Core/Providers/patientProvider.dart';
 import 'package:projeto/Core/Services/api_service.dart';
 import 'package:projeto/Presentation/CommonWidgets/appDrawer.dart';
+import 'package:provider/provider.dart';
 
 class GasForm extends StatefulWidget {
   const GasForm({super.key});
@@ -39,6 +41,17 @@ class _GasFormState extends State<GasForm> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final patientGlobal = Provider.of<PatientProvider>(
+        context,
+        listen: false,
+      );
+      if (patientGlobal.nome != null) {
+        setState(() {
+          _interventionPlanController.text = patientGlobal.nome!;
+        });
+      }
+    });
     _initializeGoals();
     _calculateAll();
   }

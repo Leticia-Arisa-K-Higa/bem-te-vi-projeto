@@ -6,7 +6,21 @@ from asiaCalculator import PraxisIscnsciCalculator
 from gasCalculator import GasCalculator
 from database import get_db_connection
 from models import AnamneseCreate, Exam, GasEvaluation, ElectrodiagnosisCreate, MeemCreate
+from pydantic import BaseModel
+from typing import List
 
+from models import (
+    AnamneseCreate, 
+    Exam, 
+    GasEvaluation, 
+    ElectrodiagnosisCreate, 
+    MeemCreate, 
+    PatientCreate, 
+    PatientResponse,
+    SignupRequest,
+    LoginRequest,
+    DensitometryCreate
+)
 
 app = FastAPI(title="Bem-Te-Vi API", version="1.0")
 
@@ -395,3 +409,335 @@ def create_meem_evaluation(meem_data: MeemCreate):
             conn.close()
 
     return {"message": "Avaliação MEEM salva com sucesso!", "id": new_id, "paciente_id": paciente_id}
+
+@app.post("/api/v1/register", summary="Cadastra um novo usuário (Fisio, Estagiário ou Paciente)", status_code=status.HTTP_201_CREATED)
+def register_user(user_data: SignupRequest):
+    conn = None
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        # 1. Verifica se o email já existe
+        cursor.execute("SELECT id FROM usuarios WHERE email = %s;", (user_data.email,))
+        if cursor.fetchone():
+            raise HTTPException(status_code=400, detail="Este email já está em uso.")
+
+        # 2. Insere o novo usuário
+        query = """
+            INSERT INTO usuarios (nome_completo, email, senha, perfil)
+            VALUES (%s, %s, %s, %s) RETURNING id;
+        """
+        cursor.execute(query, (
+            user_data.name, 
+            user_data.email, 
+            user_data.password, # OBS: Em produção, use hash (bcrypt) aqui!
+            user_data.profile
+        ))
+        
+        new_id = cursor.fetchone()[0]
+        conn.commit()
+
+        print(f"NOVO USUÁRIO: {user_data.name} ({user_data.profile}) cadastrado com sucesso.")
+        return {"message": "Cadastro realizado com sucesso!", "user_id": new_id}
+
+    except HTTPException as he:
+        raise he # Repassa erros de validação (email duplicado)
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(f"ERRO NO CADASTRO: {error}")
+        if conn: conn.rollback()
+        raise HTTPException(status_code=500, detail="Erro interno ao cadastrar usuário.")
+    finally:
+        if conn:
+            cursor.close()
+            conn.close()
+
+
+# --- ENDPOINT: LOGIN ---
+@app.post("/api/v1/login", summary="Realiza login via Email e Perfil")
+def login_user(login_data: LoginRequest):
+    conn = None
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        # Busca usuário que combine Email + Senha + Perfil
+        query = """
+            SELECT id, nome_completo, perfil FROM usuarios 
+            WHERE email = %s AND senha = %s AND perfil = %s;
+        """
+        cursor.execute(query, (login_data.email, login_data.password, login_data.profile))
+        user = cursor.fetchone()
+
+        if user:
+            return {
+                "status": "success",
+                "message": "Login realizado com sucesso",
+                "user_id": user[0],
+                "nome": user[1],
+                "perfil": user[2]
+            }
+        else:
+            # Se não achar, retorna erro 401 (Não autorizado)
+            raise HTTPException(status_code=401, detail="Email, senha ou perfil incorretos.")
+
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(f"ERRO NO LOGIN: {error}")
+        raise HTTPException(status_code=500, detail="Erro interno no servidor.")
+    finally:
+        if conn:
+            cursor.close()
+            conn.close()
+
+
+@app.post("/api/v1/patients", summary="Cadastra um novo paciente com dados completos", status_code=status.HTTP_201_CREATED)
+def create_patient(patient: PatientCreate):
+    conn = None
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        # Opcional: Verificar se CPF já existe antes de inserir
+        if patient.cpf:
+            cursor.execute("SELECT id FROM pacientes WHERE cpf = %s;", (patient.cpf,))
+            if cursor.fetchone():
+                raise HTTPException(status_code=400, detail="Já existe um paciente com este CPF.")
+
+        query = """
+            INSERT INTO pacientes (
+                nome_completo, data_nascimento, peso, altura, cpf, rg, sexo, 
+                telefone, email, contato_emergencia_nome, contato_emergencia_telefone
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            RETURNING id;
+        """
+        
+        cursor.execute(query, (
+            patient.nome_completo,
+            patient.data_nascimento,
+            patient.peso,
+            patient.altura,
+            patient.cpf,
+            patient.rg,
+            patient.sexo,
+            patient.telefone,
+            patient.email,
+            patient.emergencia_nome,
+            patient.emergencia_telefone
+        ))
+        
+        new_id = cursor.fetchone()[0]
+        conn.commit()
+        
+        print(f"PACIENTE CADASTRADO: {patient.nome_completo} ID: {new_id}")
+        return {"message": "Paciente cadastrado com sucesso!", "id": new_id}
+
+    except HTTPException as he:
+        raise he
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(f"ERRO AO CADASTRAR PACIENTE: {error}")
+        if conn: conn.rollback()
+        raise HTTPException(status_code=500, detail="Erro ao salvar paciente.")
+    finally:
+        if conn:
+            cursor.close()
+            conn.close()
+
+# --- ENDPOINT: BUSCAR TODOS OS PACIENTES ---
+@app.get("/api/v1/patients", response_model=List[PatientResponse], summary="Lista todos os pacientes cadastrados")
+def get_all_patients():
+    conn = None
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        # --- CORREÇÃO AQUI: Selecionar TODAS as colunas necessárias ---
+        query = """
+            SELECT 
+                id, 
+                nome_completo, 
+                data_nascimento, 
+                peso, 
+                altura, 
+                cpf, 
+                rg, 
+                sexo, 
+                telefone, 
+                email, 
+                contato_emergencia_nome, 
+                contato_emergencia_telefone
+            FROM pacientes 
+            ORDER BY nome_completo ASC;
+        """
+        cursor.execute(query)
+        rows = cursor.fetchall()
+
+        patients_list = []
+        for row in rows:
+            # Mapear cada coluna para o campo certo do JSON
+            patients_list.append({
+                "id": row[0],
+                "nome_completo": row[1],
+                "data_nascimento": row[2],
+                "peso": row[3],
+                "altura": row[4],
+                "cpf": row[5],
+                "rg": row[6],
+                "sexo": row[7],
+                "telefone": row[8],
+                "email": row[9],
+                "emergencia_nome": row[10],
+                "emergencia_telefone": row[11]
+            })
+
+        return patients_list
+
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(f"ERRO AO BUSCAR PACIENTES: {error}")
+        raise HTTPException(status_code=500, detail="Erro ao buscar lista de pacientes.")
+    finally:
+        if conn:
+            cursor.close()
+            conn.close()
+
+@app.put("/api/v1/patients/update-by-name", summary="Atualiza dados de um paciente buscando pelo nome")
+def update_patient_by_name(patient_data: PatientCreate):
+    conn = None
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        # 1. Verifica se o paciente existe pelo nome
+        cursor.execute("SELECT id FROM pacientes WHERE nome_completo = %s;", (patient_data.nome_completo,))
+        record = cursor.fetchone()
+
+        if not record:
+            raise HTTPException(status_code=404, detail=f"Paciente '{patient_data.nome_completo}' não encontrado.")
+
+        patient_id = record[0]
+
+        # 2. Atualiza os dados
+        query = """
+            UPDATE pacientes 
+            SET 
+                data_nascimento = %s,
+                peso = %s,
+                altura = %s,
+                cpf = %s,
+                rg = %s,
+                sexo = %s,
+                telefone = %s,
+                email = %s,
+                contato_emergencia_nome = %s,
+                contato_emergencia_telefone = %s
+            WHERE id = %s;
+        """
+        
+        cursor.execute(query, (
+            patient_data.data_nascimento,
+            patient_data.peso,
+            patient_data.altura,
+            patient_data.cpf,
+            patient_data.rg,
+            patient_data.sexo,
+            patient_data.telefone,
+            patient_data.email,
+            patient_data.emergencia_nome,
+            patient_data.emergencia_telefone,
+            patient_id
+        ))
+        
+        conn.commit()
+        print(f"PACIENTE ATUALIZADO: {patient_data.nome_completo}")
+        return {"message": "Dados atualizados com sucesso!", "id": patient_id}
+
+    except HTTPException as he:
+        raise he
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(f"ERRO AO ATUALIZAR PACIENTE: {error}")
+        if conn: conn.rollback()
+        raise HTTPException(status_code=500, detail="Erro ao atualizar paciente.")
+    finally:
+        if conn:
+            cursor.close()
+            conn.close()
+
+@app.post("/api/v1/densitometry", summary="Salva formulário de Densitometria Óssea", status_code=status.HTTP_201_CREATED)
+def create_densitometry(data: DensitometryCreate):
+    conn = None
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        # 1. Busca ou Cria o Paciente
+        cursor.execute("SELECT id FROM pacientes WHERE nome_completo = %s;", (data.patientName,))
+        paciente = cursor.fetchone()
+
+        if paciente:
+            paciente_id = paciente[0]
+        else:
+            cursor.execute("INSERT INTO pacientes (nome_completo) VALUES (%s) RETURNING id;", (data.patientName,))
+            paciente_id = cursor.fetchone()[0]
+
+        # 2. Insere a Avaliação Principal (Pai)
+        sql_main = """
+            INSERT INTO avaliacoes_densitometria (
+                paciente_id, data_exame, peso, altura, imc
+            ) VALUES (%s, %s, %s, %s, %s) RETURNING id;
+        """
+        cursor.execute(sql_main, (
+            paciente_id, data.examDate, data.weight, data.height, data.imc
+        ))
+        avaliacao_id = cursor.fetchone()[0]
+
+        # 3. Função Auxiliar para inserir Regiões (Tabelas de cima)
+        def insert_regions(regions_list, tipo_secao):
+            sql_reg = "INSERT INTO densitometria_regioes (avaliacao_id, tipo_secao, regiao, bmd) VALUES (%s, %s, %s, %s);"
+            for item in regions_list:
+                cursor.execute(sql_reg, (avaliacao_id, tipo_secao, item.regiao, item.bmd))
+
+        # 4. Função Auxiliar para inserir Tendências (Tabelas de baixo)
+        def insert_trend(trend_data, tipo_secao):
+            sql_trend = """
+                INSERT INTO densitometria_tendencias (
+                    avaliacao_id, tipo_secao, data_medida, idade, bmd,
+                    tecido_gordura_percent, massa_total_kg, gordo_g, magro_g
+                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s);
+            """
+            cursor.execute(sql_trend, (
+                avaliacao_id, tipo_secao, trend_data.data, trend_data.idade, trend_data.bmd,
+                trend_data.tecido_percent, trend_data.massa_total, trend_data.gordo, trend_data.magro
+            ))
+
+        # --- INSERINDO OS DADOS ---
+        
+        # Coluna Lombar
+        insert_regions(data.lumbarRegions, 'LOMBAR')
+        insert_trend(data.lumbarTrend, 'LOMBAR_TREND')
+
+        # Corpo Total
+        insert_regions(data.bodyRegions, 'CORPO_TOTAL')
+        insert_trend(data.bodyTrend, 'CORPO_TOTAL_TREND')
+
+        # Composição Corporal (Só tem tendência)
+        insert_trend(data.compositionTrend, 'COMPOSICAO_TREND')
+
+        # Fêmur Direito
+        insert_regions(data.femurRightRegions, 'FEMUR_DIR')
+        insert_trend(data.femurRightTrend, 'FEMUR_DIR_TREND')
+
+        # Fêmur Esquerdo
+        insert_regions(data.femurLeftRegions, 'FEMUR_ESQ')
+        insert_trend(data.femurLeftTrend, 'FEMUR_ESQ_TREND')
+
+        conn.commit()
+        print(f"SUCESSO: Densitometria ID {avaliacao_id} salva para {data.patientName}.")
+        return {"message": "Exame salvo com sucesso!", "id": avaliacao_id}
+
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(f"ERRO DE BANCO DE DADOS (Densitometria): {error}")
+        if conn:
+            conn.rollback()
+        raise HTTPException(status_code=500, detail=f"Erro ao salvar densitometria: {str(error)}")
+    finally:
+        if conn:
+            cursor.close()
+            conn.close()

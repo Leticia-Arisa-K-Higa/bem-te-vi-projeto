@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import 'package:projeto/Core/Providers/meemFormProvider.dart';
+import 'package:projeto/Core/Providers/patientProvider.dart';
 import 'package:projeto/Presentation/CommonWidgets/appDrawer.dart';
 import 'package:provider/provider.dart';
 
@@ -224,6 +225,38 @@ class _MeemFormScreenState extends State<MeemFormScreen> {
   }
 
   @override
+  @override
+  void initState() {
+    super.initState();
+
+    // Preenchimento Automático
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final meemProvider = Provider.of<MeemFormProvider>(
+        context,
+        listen: false,
+      );
+      final patientGlobal = Provider.of<PatientProvider>(
+        context,
+        listen: false,
+      );
+
+      // --- DEBUG: Veja isso no console ---
+      print("MEEM DEBUG - Nome: ${patientGlobal.nome}");
+      print("MEEM DEBUG - Data Nasc: ${patientGlobal.dataNascimento}");
+      print("MEEM DEBUG - Idade Calculada: ${patientGlobal.idade}");
+      // ----------------------------------
+
+      if (patientGlobal.nome != null) {
+        meemProvider.nomeController.text = patientGlobal.nome!;
+
+        // Se a idade foi calculada corretamente no Provider, preenche aqui
+        if (patientGlobal.idade != null) {
+          meemProvider.idadeController.text = patientGlobal.idade.toString();
+        }
+      }
+    });
+  }
+
   void dispose() {
     _examDateController.dispose();
     super.dispose();

@@ -3,6 +3,7 @@ import 'package:projeto/Core/Constants/appStrings.dart';
 import 'package:projeto/Core/Models/neurologyCellData.dart';
 import 'package:projeto/Core/Models/resultsModels.dart';
 import 'package:projeto/Core/Providers/asiaFormProvider.dart';
+import 'package:projeto/Core/Providers/patientProvider.dart';
 import 'package:projeto/Core/Services/api_service.dart';
 import 'package:projeto/Presentation/CommonWidgets/appDrawer.dart';
 import 'package:projeto/Presentation/CommonWidgets/customTextField.dart';
@@ -20,6 +21,18 @@ class AsiaForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final asiaProvider = Provider.of<AsiaFormProvider>(context);
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final patientGlobal = Provider.of<PatientProvider>(
+        context,
+        listen: false,
+      );
+      if (patientGlobal.nome != null &&
+          (asiaProvider.patientName == null ||
+              asiaProvider.patientName!.isEmpty)) {
+        asiaProvider.setPatientName(patientGlobal.nome!);
+      }
+    });
 
     final motorDireitoCells = asiaProvider.cells
         .where((cell) => cell.type == CellType.motor && cell.side == Side.right)
@@ -395,9 +408,9 @@ class AsiaForm extends StatelessWidget {
           children: [
             Text(
               'Comentários:',
-              style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                color: Colors.white,
-              ), 
+              style: Theme.of(
+                context,
+              ).textTheme.titleLarge?.copyWith(color: Colors.white),
             ),
             const SizedBox(height: 8),
             CustomTextField(
@@ -405,11 +418,10 @@ class AsiaForm extends StatelessWidget {
               initialValue: provider.comments,
               onChanged: provider.setComments,
               maxLines: 5,
-              textColor: Colors.white, 
-              labelColor: Colors
-                  .white70, 
-              cursorColor: Colors.white, 
-              borderColor: Colors.white54, 
+              textColor: Colors.white,
+              labelColor: Colors.white70,
+              cursorColor: Colors.white,
+              borderColor: Colors.white54,
             ),
           ],
         ),
@@ -439,7 +451,13 @@ class AsiaForm extends StatelessWidget {
             const SizedBox(height: 16),
 
             CustomTextField(
+              // --- ADICIONE ESTA LINHA ABAIXO ---
+              // Isso força o campo a recriar quando o nome mudar de nulo para "Linda"
+              key: Key(provider.patientName ?? 'patient_name_field'),
+
+              // ----------------------------------
               labelText: 'Nome do Paciente',
+              initialValue: provider.patientName,
               onChanged: (value) {
                 provider.setPatientName(value);
               },

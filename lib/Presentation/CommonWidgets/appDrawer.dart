@@ -50,6 +50,14 @@ class AppDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/eletro_form');
             },
           ),
+          ListTile(
+            leading: const Icon(Icons.description),
+            title: const Text("Dex"),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/dex_form');
+            },
+          ),
         ],
       ),
     );

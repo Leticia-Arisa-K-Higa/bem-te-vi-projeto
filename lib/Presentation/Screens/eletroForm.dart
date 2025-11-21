@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:projeto/Core/Constants/appStrings.dart';
 import 'package:projeto/Core/Providers/eletroFormProvider.dart';
+import 'package:projeto/Core/Providers/patientProvider.dart';
 import 'package:projeto/Presentation/CommonWidgets/appDrawer.dart';
 import 'package:provider/provider.dart';
 
@@ -257,6 +258,16 @@ class EletrodiagnosticoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final provider = context.watch<EletrodiagnosticoProvider>();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final patientGlobal = Provider.of<PatientProvider>(
+        context,
+        listen: false,
+      );
+      if (patientGlobal.nome != null &&
+          provider.pacienteController.text.isEmpty) {
+        provider.pacienteController.text = patientGlobal.nome!;
+      }
+    });
     final muscleData = provider.muscleDataMap;
 
     return Scaffold(

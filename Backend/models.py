@@ -97,3 +97,83 @@ class MeemCreate(BaseModel):
     age: int
     escolaridade: str
     pontos: PontosMeem
+
+class PatientCreate(BaseModel):
+    nome_completo: str
+    data_nascimento: Optional[date] = None
+    peso: Optional[float] = None
+    altura: Optional[float] = None
+    cpf: Optional[str] = None
+    rg: Optional[str] = None
+    sexo: Optional[str] = None
+    telefone: Optional[str] = None
+    email: Optional[EmailStr] = None
+    emergencia_nome: Optional[str] = None
+    emergencia_telefone: Optional[str] = None
+
+class PatientResponse(BaseModel):
+    id: int
+    nome_completo: str
+    data_nascimento: Optional[date] = None
+    peso: Optional[float] = None
+    altura: Optional[float] = None
+    cpf: Optional[str] = None
+    rg: Optional[str] = None
+    sexo: Optional[str] = None
+    telefone: Optional[str] = None
+    email: Optional[EmailStr] = None
+    emergencia_nome: Optional[str] = None
+    emergencia_telefone: Optional[str] = None
+
+class SignupRequest(BaseModel):
+    name: str
+    email: str
+    password: str
+    profile: str 
+
+class LoginRequest(BaseModel):
+    email: str
+    password: str
+    profile: str
+
+class DensityRegion(BaseModel):
+    regiao: str
+    bmd: float
+
+# Modelo para uma linha de tendência (inclui os campos extras de composição)
+class DensityTrend(BaseModel):
+    data: str # Recebe como string 'YYYY-MM-DD' ou ISO
+    idade: int
+    bmd: Optional[float] = None
+    # Campos opcionais para a parte de composição corporal
+    tecido_percent: Optional[float] = None
+    massa_total: Optional[float] = None
+    gordo: Optional[float] = None
+    magro: Optional[float] = None
+
+# Modelo Principal que agrupa tudo
+class DensitometryCreate(BaseModel):
+    patientName: str
+    examDate: str
+    weight: float
+    height: float
+    imc: float
+    
+    # Seção 2: Coluna Lombar
+    lumbarRegions: List[DensityRegion]
+    lumbarTrend: DensityTrend
+    
+    # Seção 3: Corpo Total
+    bodyRegions: List[DensityRegion]
+    bodyTrend: DensityTrend
+    
+    # Seção 3.1: Tendência Composição
+    compositionTrend: DensityTrend
+    
+    # Seção 4: Fêmur Direito
+    femurRightRegions: List[DensityRegion]
+    femurRightTrend: DensityTrend
+    
+    # Seção 5: Fêmur Esquerdo
+    femurLeftRegions: List[DensityRegion]
+    femurLeftTrend: DensityTrend

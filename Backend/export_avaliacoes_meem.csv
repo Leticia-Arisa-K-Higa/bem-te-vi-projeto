@@ -1,0 +1,27 @@
+nome_completo,id,paciente_id,data_exame,nome_examinador,idade_paciente,escolaridade_paciente,orient_temp_dia_semana,orient_temp_dia_mes,orient_temp_mes,orient_temp_ano,orient_temp_horas,orient_esp_local,orient_esp_edificio,orient_esp_bairro,orient_esp_cidade,orient_esp_estado,mem_imediata_carro,mem_imediata_vaso,mem_imediata_tijolo,atencao_calc_sub1,atencao_calc_sub2,atencao_calc_sub3,atencao_calc_sub4,atencao_calc_sub5,mem_evocativa_carro,mem_evocativa_vaso,mem_evocativa_tijolo,ling_nomear_caneta,ling_nomear_relogio,ling_repetir_frase,ling_comando_mao,ling_comando_dobrar,ling_comando_chao,ling_escrita_ler,ling_escrita_frase,ling_escrita_copia,pontuacao_total
+Amanda Fernandes,1,1,2025-08-13,Kamilly Fonseca,45,1-3 anos,0,1,0,1,0,0,0,0,0,0,0,0,1,1,1,1,0,1,1,1,0,1,0,1,0,0,1,0,1,0,13
+Amanda Fernandes,2,1,2025-08-28,Luiz Gustavo da Mota,34,Analfabeto,1,0,0,0,1,1,1,1,1,0,0,1,1,1,1,0,0,1,1,0,0,1,1,0,0,0,0,0,1,0,15
+Sr. Noah Pacheco,3,2,2025-08-08,Apollo Rezende,30,Analfabeto,0,1,0,0,0,1,0,0,1,1,0,1,0,1,0,0,0,1,1,1,0,1,0,0,0,0,1,1,1,1,14
+Ana Luiza Brito,4,3,2025-09-03,Maria Luiza Marques,41,8+ anos,0,0,1,1,1,1,0,0,1,0,0,1,0,0,0,0,1,1,0,1,0,0,1,1,1,1,0,1,0,0,14
+Cecília Brito,5,4,2025-09-16,Allana Ramos,37,1-3 anos,0,1,0,1,0,0,0,1,1,1,0,1,0,1,1,0,0,0,0,0,1,0,1,0,1,0,1,0,0,1,13
+Dr. Luiz Otávio Gomes,6,5,2025-09-17,Agatha Viana,71,1-3 anos,0,0,0,1,0,1,0,1,1,1,0,1,0,0,0,1,0,1,1,0,1,0,1,0,0,1,1,1,0,0,14
+Lucas Silveira,7,6,2025-08-14,Vitor Hugo Ferreira,35,8+ anos,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,1,1,1,1,0,1,0,1,1,1,0,1,0,1,13
+Joaquim Silveira,8,7,2025-08-27,Ana Vitória Gomes,51,1-3 anos,1,1,0,1,0,0,1,1,0,1,0,0,1,1,1,1,1,0,1,0,0,0,1,1,1,1,1,0,0,0,17
+Srta. Manuella da Rosa,9,8,2025-08-07,Fernanda Macedo,43,8+ anos,0,1,0,0,0,0,1,1,0,1,0,1,1,1,1,1,0,0,1,1,1,0,0,0,0,0,0,0,1,1,14
+Pedro Lucas Sales,10,9,2025-08-23,Sabrina Casa Grande,75,1-3 anos,1,0,1,0,1,0,0,1,0,1,1,1,1,1,0,1,0,1,0,0,0,1,1,1,1,1,0,1,0,0,17
+Davi Luiz Costa,11,10,2025-08-13,Rafaela Rocha,65,4-7 anos,0,0,1,1,0,0,1,0,0,1,1,0,0,1,1,0,1,1,1,0,1,1,0,0,0,0,1,0,0,1,14
+Ana Liz Correia,12,11,2025-08-11,Ester Santos,47,1-3 anos,0,1,1,0,0,1,1,1,0,1,1,0,0,1,1,0,1,0,1,1,0,1,0,0,0,0,0,0,0,0,13
+Ana Beatriz Nogueira,13,12,2025-09-25,Luan Cavalcante,52,Analfabeto,1,1,0,0,1,0,0,0,0,1,0,1,1,1,1,1,1,0,1,1,1,0,0,1,1,1,1,0,0,0,17
+Thiago Vieira,14,13,2025-08-03,Maria Júlia da Rocha,74,1-3 anos,0,0,1,1,0,0,0,0,1,1,1,0,0,1,0,0,1,0,1,0,1,1,1,0,0,1,0,0,1,0,13
+Isis da Luz,15,14,2025-08-19,Gustavo Henrique Costela,51,8+ anos,1,0,0,1,0,0,1,0,0,0,0,0,0,1,1,0,1,0,0,0,0,1,0,0,1,0,1,1,1,1,12
+Sarah da Costa,16,15,2025-08-11,Luiz Henrique da Paz,35,8+ anos,0,1,1,1,1,0,0,0,1,1,0,0,0,0,1,1,0,1,1,0,1,0,1,0,1,1,1,1,0,0,16
+Mirella Cirino,17,16,2025-08-11,Apollo Pastor,42,8+ anos,0,1,0,1,0,1,0,1,0,1,0,1,1,0,1,1,1,0,1,1,0,0,1,1,0,1,1,0,1,1,18
+Nicole Gonçalves,18,17,2025-08-11,Maria Clara Martins,20,8+ anos,1,0,1,0,0,0,0,1,1,0,1,0,1,1,0,0,0,1,1,1,1,1,0,1,1,0,0,1,1,1,17
+Ana Laura Fogaça,19,18,2025-09-28,Samuel Vasconcelos,20,8+ anos,1,0,1,0,0,0,1,1,1,0,1,1,1,1,1,0,1,0,1,1,0,0,1,1,0,0,0,1,1,0,17
+Ana Carolina Novaes,20,19,2025-08-29,Yuri Araújo,20,4-7 anos,0,0,1,0,1,1,1,0,0,1,1,1,0,1,1,0,1,1,0,1,0,1,0,1,0,0,1,1,0,0,16
+Ágatha Nogueira,21,20,2025-09-28,Arthur Gabriel Melo,21,4-7 anos,0,1,0,1,0,1,0,0,1,0,1,1,0,1,0,0,1,1,1,0,1,1,1,0,1,0,0,1,1,0,16
+Benicio Sousa,22,21,2025-08-17,Marcos Vinicius Jesus,25,8+ anos,0,0,1,0,1,1,0,0,0,0,0,1,0,0,1,0,1,0,1,0,1,0,0,0,1,1,0,1,0,1,12
+Maria Cecília Fonseca,23,22,2025-08-28,Marcelo Nunes,70,4-7 anos,0,0,0,0,1,0,1,1,0,0,1,0,0,0,1,0,1,0,1,0,0,0,1,0,0,0,0,0,1,1,10
+Julia Cirino,24,23,2025-08-17,Ravi Campos,48,1-3 anos,1,1,0,0,0,0,1,0,1,1,0,0,1,0,1,0,1,1,0,1,1,0,1,0,0,0,1,0,0,1,14
+Théo da Costa,25,24,2025-08-06,Vitor Gabriel Alves,21,Analfabeto,1,1,1,1,0,0,0,0,1,0,1,0,0,0,0,1,1,1,0,0,0,0,1,1,0,0,0,1,0,1,13
+Kevin Sá,26,25,2025-09-15,Matheus Monteiro,24,8+ anos,0,0,1,0,0,1,1,0,0,0,0,0,1,0,0,0,0,1,0,0,1,1,0,1,1,0,1,0,1,1,12

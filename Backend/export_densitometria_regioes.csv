@@ -1,0 +1,551 @@
+nome_completo,id,avaliacao_id,tipo_secao,regiao,bmd
+Amanda Fernandes,23,2,LOMBAR,L1,1.036
+Amanda Fernandes,24,2,LOMBAR,L2,1.202
+Amanda Fernandes,25,2,LOMBAR,L3,1.091
+Amanda Fernandes,26,2,LOMBAR,L4,1.147
+Amanda Fernandes,27,2,LOMBAR,L1-L2,0.838
+Amanda Fernandes,28,2,LOMBAR,L1-L3,0.898
+Amanda Fernandes,29,2,LOMBAR,L1-L4,0.842
+Amanda Fernandes,30,2,LOMBAR,L2-L3,1.087
+Amanda Fernandes,31,2,LOMBAR,L2-L4,1.120
+Amanda Fernandes,32,2,LOMBAR,L3-L4,0.920
+Amanda Fernandes,33,2,CORPO_TOTAL,Cabeça,1.275
+Amanda Fernandes,34,2,CORPO_TOTAL,Braços,1.227
+Amanda Fernandes,35,2,CORPO_TOTAL,Pernas,1.019
+Amanda Fernandes,36,2,CORPO_TOTAL,Tronco,0.867
+Amanda Fernandes,37,2,CORPO_TOTAL,Costelas,1.083
+Amanda Fernandes,38,2,CORPO_TOTAL,Coluna,0.837
+Amanda Fernandes,39,2,CORPO_TOTAL,Pelve,1.165
+Amanda Fernandes,40,2,CORPO_TOTAL,Total,0.912
+Amanda Fernandes,41,2,FEMUR_DIR,Colo,0.932
+Amanda Fernandes,42,2,FEMUR_DIR,Total,0.802
+Amanda Fernandes,43,2,FEMUR_ESQ,Colo,1.036
+Amanda Fernandes,44,2,FEMUR_ESQ,Total,0.970
+Sr. Noah Pacheco,45,3,LOMBAR,L1,1.142
+Sr. Noah Pacheco,46,3,LOMBAR,L2,0.852
+Sr. Noah Pacheco,47,3,LOMBAR,L3,0.866
+Sr. Noah Pacheco,48,3,LOMBAR,L4,1.249
+Sr. Noah Pacheco,49,3,LOMBAR,L1-L2,1.196
+Sr. Noah Pacheco,50,3,LOMBAR,L1-L3,0.904
+Sr. Noah Pacheco,51,3,LOMBAR,L1-L4,0.814
+Sr. Noah Pacheco,52,3,LOMBAR,L2-L3,1.135
+Sr. Noah Pacheco,53,3,LOMBAR,L2-L4,1.099
+Sr. Noah Pacheco,54,3,LOMBAR,L3-L4,0.915
+Sr. Noah Pacheco,55,3,CORPO_TOTAL,Cabeça,1.005
+Sr. Noah Pacheco,56,3,CORPO_TOTAL,Braços,0.845
+Sr. Noah Pacheco,57,3,CORPO_TOTAL,Pernas,1.114
+Sr. Noah Pacheco,58,3,CORPO_TOTAL,Tronco,1.006
+Sr. Noah Pacheco,59,3,CORPO_TOTAL,Costelas,1.191
+Sr. Noah Pacheco,60,3,CORPO_TOTAL,Coluna,1.296
+Sr. Noah Pacheco,61,3,CORPO_TOTAL,Pelve,1.263
+Sr. Noah Pacheco,62,3,CORPO_TOTAL,Total,1.089
+Sr. Noah Pacheco,63,3,FEMUR_DIR,Colo,1.024
+Sr. Noah Pacheco,64,3,FEMUR_DIR,Total,1.238
+Sr. Noah Pacheco,65,3,FEMUR_ESQ,Colo,0.884
+Sr. Noah Pacheco,66,3,FEMUR_ESQ,Total,1.273
+Ana Luiza Brito,67,4,LOMBAR,L1,1.149
+Ana Luiza Brito,68,4,LOMBAR,L2,1.055
+Ana Luiza Brito,69,4,LOMBAR,L3,0.803
+Ana Luiza Brito,70,4,LOMBAR,L4,1.100
+Ana Luiza Brito,71,4,LOMBAR,L1-L2,1.039
+Ana Luiza Brito,72,4,LOMBAR,L1-L3,1.242
+Ana Luiza Brito,73,4,LOMBAR,L1-L4,1.296
+Ana Luiza Brito,74,4,LOMBAR,L2-L3,1.289
+Ana Luiza Brito,75,4,LOMBAR,L2-L4,0.836
+Ana Luiza Brito,76,4,LOMBAR,L3-L4,0.830
+Ana Luiza Brito,77,4,CORPO_TOTAL,Cabeça,1.050
+Ana Luiza Brito,78,4,CORPO_TOTAL,Braços,0.969
+Ana Luiza Brito,79,4,CORPO_TOTAL,Pernas,1.036
+Ana Luiza Brito,80,4,CORPO_TOTAL,Tronco,0.908
+Ana Luiza Brito,81,4,CORPO_TOTAL,Costelas,1.221
+Ana Luiza Brito,82,4,CORPO_TOTAL,Coluna,1.271
+Ana Luiza Brito,83,4,CORPO_TOTAL,Pelve,1.005
+Ana Luiza Brito,84,4,CORPO_TOTAL,Total,1.242
+Ana Luiza Brito,85,4,FEMUR_DIR,Colo,0.993
+Ana Luiza Brito,86,4,FEMUR_DIR,Total,1.119
+Ana Luiza Brito,87,4,FEMUR_ESQ,Colo,0.962
+Ana Luiza Brito,88,4,FEMUR_ESQ,Total,1.271
+Cecília Brito,89,5,LOMBAR,L1,1.284
+Cecília Brito,90,5,LOMBAR,L2,1.266
+Cecília Brito,91,5,LOMBAR,L3,0.988
+Cecília Brito,92,5,LOMBAR,L4,1.242
+Cecília Brito,93,5,LOMBAR,L1-L2,0.829
+Cecília Brito,94,5,LOMBAR,L1-L3,0.876
+Cecília Brito,95,5,LOMBAR,L1-L4,0.914
+Cecília Brito,96,5,LOMBAR,L2-L3,0.934
+Cecília Brito,97,5,LOMBAR,L2-L4,1.162
+Cecília Brito,98,5,LOMBAR,L3-L4,0.910
+Cecília Brito,99,5,CORPO_TOTAL,Cabeça,0.859
+Cecília Brito,100,5,CORPO_TOTAL,Braços,1.242
+Cecília Brito,101,5,CORPO_TOTAL,Pernas,0.897
+Cecília Brito,102,5,CORPO_TOTAL,Tronco,1.019
+Cecília Brito,103,5,CORPO_TOTAL,Costelas,0.970
+Cecília Brito,104,5,CORPO_TOTAL,Coluna,0.899
+Cecília Brito,105,5,CORPO_TOTAL,Pelve,0.924
+Cecília Brito,106,5,CORPO_TOTAL,Total,0.855
+Cecília Brito,107,5,FEMUR_DIR,Colo,1.230
+Cecília Brito,108,5,FEMUR_DIR,Total,0.956
+Cecília Brito,109,5,FEMUR_ESQ,Colo,0.932
+Cecília Brito,110,5,FEMUR_ESQ,Total,1.113
+Dr. Luiz Otávio Gomes,111,6,LOMBAR,L1,0.973
+Dr. Luiz Otávio Gomes,112,6,LOMBAR,L2,1.209
+Dr. Luiz Otávio Gomes,113,6,LOMBAR,L3,1.291
+Dr. Luiz Otávio Gomes,114,6,LOMBAR,L4,0.992
+Dr. Luiz Otávio Gomes,115,6,LOMBAR,L1-L2,0.986
+Dr. Luiz Otávio Gomes,116,6,LOMBAR,L1-L3,0.806
+Dr. Luiz Otávio Gomes,117,6,LOMBAR,L1-L4,1.035
+Dr. Luiz Otávio Gomes,118,6,LOMBAR,L2-L3,1.152
+Dr. Luiz Otávio Gomes,119,6,LOMBAR,L2-L4,1.288
+Dr. Luiz Otávio Gomes,120,6,LOMBAR,L3-L4,1.278
+Dr. Luiz Otávio Gomes,121,6,CORPO_TOTAL,Cabeça,0.961
+Dr. Luiz Otávio Gomes,122,6,CORPO_TOTAL,Braços,0.973
+Dr. Luiz Otávio Gomes,123,6,CORPO_TOTAL,Pernas,0.969
+Dr. Luiz Otávio Gomes,124,6,CORPO_TOTAL,Tronco,1.206
+Dr. Luiz Otávio Gomes,125,6,CORPO_TOTAL,Costelas,0.813
+Dr. Luiz Otávio Gomes,126,6,CORPO_TOTAL,Coluna,0.984
+Dr. Luiz Otávio Gomes,127,6,CORPO_TOTAL,Pelve,0.857
+Dr. Luiz Otávio Gomes,128,6,CORPO_TOTAL,Total,0.993
+Dr. Luiz Otávio Gomes,129,6,FEMUR_DIR,Colo,1.075
+Dr. Luiz Otávio Gomes,130,6,FEMUR_DIR,Total,1.119
+Dr. Luiz Otávio Gomes,131,6,FEMUR_ESQ,Colo,0.942
+Dr. Luiz Otávio Gomes,132,6,FEMUR_ESQ,Total,1.145
+Lucas Silveira,133,7,LOMBAR,L1,1.045
+Lucas Silveira,134,7,LOMBAR,L2,0.915
+Lucas Silveira,135,7,LOMBAR,L3,1.165
+Lucas Silveira,136,7,LOMBAR,L4,1.193
+Lucas Silveira,137,7,LOMBAR,L1-L2,1.257
+Lucas Silveira,138,7,LOMBAR,L1-L3,0.805
+Lucas Silveira,139,7,LOMBAR,L1-L4,1.129
+Lucas Silveira,140,7,LOMBAR,L2-L3,1.205
+Lucas Silveira,141,7,LOMBAR,L2-L4,1.024
+Lucas Silveira,142,7,LOMBAR,L3-L4,1.063
+Lucas Silveira,143,7,CORPO_TOTAL,Cabeça,1.077
+Lucas Silveira,144,7,CORPO_TOTAL,Braços,1.059
+Lucas Silveira,145,7,CORPO_TOTAL,Pernas,0.902
+Lucas Silveira,146,7,CORPO_TOTAL,Tronco,1.203
+Lucas Silveira,147,7,CORPO_TOTAL,Costelas,1.004
+Lucas Silveira,148,7,CORPO_TOTAL,Coluna,0.813
+Lucas Silveira,149,7,CORPO_TOTAL,Pelve,1.287
+Lucas Silveira,150,7,CORPO_TOTAL,Total,1.133
+Lucas Silveira,151,7,FEMUR_DIR,Colo,0.978
+Lucas Silveira,152,7,FEMUR_DIR,Total,1.255
+Lucas Silveira,153,7,FEMUR_ESQ,Colo,1.279
+Lucas Silveira,154,7,FEMUR_ESQ,Total,0.815
+Joaquim Silveira,155,8,LOMBAR,L1,1.097
+Joaquim Silveira,156,8,LOMBAR,L2,0.922
+Joaquim Silveira,157,8,LOMBAR,L3,1.023
+Joaquim Silveira,158,8,LOMBAR,L4,0.832
+Joaquim Silveira,159,8,LOMBAR,L1-L2,0.829
+Joaquim Silveira,160,8,LOMBAR,L1-L3,0.802
+Joaquim Silveira,161,8,LOMBAR,L1-L4,1.266
+Joaquim Silveira,162,8,LOMBAR,L2-L3,1.070
+Joaquim Silveira,163,8,LOMBAR,L2-L4,0.829
+Joaquim Silveira,164,8,LOMBAR,L3-L4,1.193
+Joaquim Silveira,165,8,CORPO_TOTAL,Cabeça,0.854
+Joaquim Silveira,166,8,CORPO_TOTAL,Braços,1.056
+Joaquim Silveira,167,8,CORPO_TOTAL,Pernas,1.088
+Joaquim Silveira,168,8,CORPO_TOTAL,Tronco,1.071
+Joaquim Silveira,169,8,CORPO_TOTAL,Costelas,0.872
+Joaquim Silveira,170,8,CORPO_TOTAL,Coluna,1.088
+Joaquim Silveira,171,8,CORPO_TOTAL,Pelve,0.930
+Joaquim Silveira,172,8,CORPO_TOTAL,Total,0.981
+Joaquim Silveira,173,8,FEMUR_DIR,Colo,0.994
+Joaquim Silveira,174,8,FEMUR_DIR,Total,0.982
+Joaquim Silveira,175,8,FEMUR_ESQ,Colo,0.851
+Joaquim Silveira,176,8,FEMUR_ESQ,Total,1.006
+Srta. Manuella da Rosa,177,9,LOMBAR,L1,1.160
+Srta. Manuella da Rosa,178,9,LOMBAR,L2,0.861
+Srta. Manuella da Rosa,179,9,LOMBAR,L3,1.106
+Srta. Manuella da Rosa,180,9,LOMBAR,L4,1.101
+Srta. Manuella da Rosa,181,9,LOMBAR,L1-L2,0.903
+Srta. Manuella da Rosa,182,9,LOMBAR,L1-L3,0.875
+Srta. Manuella da Rosa,183,9,LOMBAR,L1-L4,1.118
+Srta. Manuella da Rosa,184,9,LOMBAR,L2-L3,1.105
+Srta. Manuella da Rosa,185,9,LOMBAR,L2-L4,0.927
+Srta. Manuella da Rosa,186,9,LOMBAR,L3-L4,0.886
+Srta. Manuella da Rosa,187,9,CORPO_TOTAL,Cabeça,1.085
+Srta. Manuella da Rosa,188,9,CORPO_TOTAL,Braços,0.840
+Srta. Manuella da Rosa,189,9,CORPO_TOTAL,Pernas,1.276
+Srta. Manuella da Rosa,190,9,CORPO_TOTAL,Tronco,0.926
+Srta. Manuella da Rosa,191,9,CORPO_TOTAL,Costelas,1.154
+Srta. Manuella da Rosa,192,9,CORPO_TOTAL,Coluna,1.280
+Srta. Manuella da Rosa,193,9,CORPO_TOTAL,Pelve,1.229
+Srta. Manuella da Rosa,194,9,CORPO_TOTAL,Total,1.230
+Srta. Manuella da Rosa,195,9,FEMUR_DIR,Colo,1.173
+Srta. Manuella da Rosa,196,9,FEMUR_DIR,Total,1.073
+Srta. Manuella da Rosa,197,9,FEMUR_ESQ,Colo,1.096
+Srta. Manuella da Rosa,198,9,FEMUR_ESQ,Total,0.878
+Pedro Lucas Sales,199,10,LOMBAR,L1,0.905
+Pedro Lucas Sales,200,10,LOMBAR,L2,1.072
+Pedro Lucas Sales,201,10,LOMBAR,L3,1.264
+Pedro Lucas Sales,202,10,LOMBAR,L4,1.162
+Pedro Lucas Sales,203,10,LOMBAR,L1-L2,1.278
+Pedro Lucas Sales,204,10,LOMBAR,L1-L3,1.025
+Pedro Lucas Sales,205,10,LOMBAR,L1-L4,1.093
+Pedro Lucas Sales,206,10,LOMBAR,L2-L3,1.079
+Pedro Lucas Sales,207,10,LOMBAR,L2-L4,0.959
+Pedro Lucas Sales,208,10,LOMBAR,L3-L4,0.906
+Pedro Lucas Sales,209,10,CORPO_TOTAL,Cabeça,0.821
+Pedro Lucas Sales,210,10,CORPO_TOTAL,Braços,0.939
+Pedro Lucas Sales,211,10,CORPO_TOTAL,Pernas,0.868
+Pedro Lucas Sales,212,10,CORPO_TOTAL,Tronco,0.900
+Pedro Lucas Sales,213,10,CORPO_TOTAL,Costelas,1.222
+Pedro Lucas Sales,214,10,CORPO_TOTAL,Coluna,0.972
+Pedro Lucas Sales,215,10,CORPO_TOTAL,Pelve,1.183
+Pedro Lucas Sales,216,10,CORPO_TOTAL,Total,1.079
+Pedro Lucas Sales,217,10,FEMUR_DIR,Colo,1.047
+Pedro Lucas Sales,218,10,FEMUR_DIR,Total,0.944
+Pedro Lucas Sales,219,10,FEMUR_ESQ,Colo,1.163
+Pedro Lucas Sales,220,10,FEMUR_ESQ,Total,1.276
+Davi Luiz Costa,221,11,LOMBAR,L1,0.916
+Davi Luiz Costa,222,11,LOMBAR,L2,1.186
+Davi Luiz Costa,223,11,LOMBAR,L3,0.831
+Davi Luiz Costa,224,11,LOMBAR,L4,1.033
+Davi Luiz Costa,225,11,LOMBAR,L1-L2,1.086
+Davi Luiz Costa,226,11,LOMBAR,L1-L3,0.977
+Davi Luiz Costa,227,11,LOMBAR,L1-L4,1.202
+Davi Luiz Costa,228,11,LOMBAR,L2-L3,1.256
+Davi Luiz Costa,229,11,LOMBAR,L2-L4,1.272
+Davi Luiz Costa,230,11,LOMBAR,L3-L4,1.050
+Davi Luiz Costa,231,11,CORPO_TOTAL,Cabeça,1.104
+Davi Luiz Costa,232,11,CORPO_TOTAL,Braços,0.926
+Davi Luiz Costa,233,11,CORPO_TOTAL,Pernas,0.909
+Davi Luiz Costa,234,11,CORPO_TOTAL,Tronco,0.873
+Davi Luiz Costa,235,11,CORPO_TOTAL,Costelas,1.181
+Davi Luiz Costa,236,11,CORPO_TOTAL,Coluna,1.270
+Davi Luiz Costa,237,11,CORPO_TOTAL,Pelve,1.101
+Davi Luiz Costa,238,11,CORPO_TOTAL,Total,1.126
+Davi Luiz Costa,239,11,FEMUR_DIR,Colo,1.046
+Davi Luiz Costa,240,11,FEMUR_DIR,Total,1.202
+Davi Luiz Costa,241,11,FEMUR_ESQ,Colo,1.067
+Davi Luiz Costa,242,11,FEMUR_ESQ,Total,1.087
+Ana Liz Correia,243,12,LOMBAR,L1,1.204
+Ana Liz Correia,244,12,LOMBAR,L2,1.261
+Ana Liz Correia,245,12,LOMBAR,L3,0.899
+Ana Liz Correia,246,12,LOMBAR,L4,1.074
+Ana Liz Correia,247,12,LOMBAR,L1-L2,1.056
+Ana Liz Correia,248,12,LOMBAR,L1-L3,1.136
+Ana Liz Correia,249,12,LOMBAR,L1-L4,1.171
+Ana Liz Correia,250,12,LOMBAR,L2-L3,1.202
+Ana Liz Correia,251,12,LOMBAR,L2-L4,1.212
+Ana Liz Correia,252,12,LOMBAR,L3-L4,0.894
+Ana Liz Correia,253,12,CORPO_TOTAL,Cabeça,1.182
+Ana Liz Correia,254,12,CORPO_TOTAL,Braços,0.848
+Ana Liz Correia,255,12,CORPO_TOTAL,Pernas,0.964
+Ana Liz Correia,256,12,CORPO_TOTAL,Tronco,1.125
+Ana Liz Correia,257,12,CORPO_TOTAL,Costelas,1.132
+Ana Liz Correia,258,12,CORPO_TOTAL,Coluna,0.818
+Ana Liz Correia,259,12,CORPO_TOTAL,Pelve,1.007
+Ana Liz Correia,260,12,CORPO_TOTAL,Total,1.058
+Ana Liz Correia,261,12,FEMUR_DIR,Colo,1.120
+Ana Liz Correia,262,12,FEMUR_DIR,Total,0.941
+Ana Liz Correia,263,12,FEMUR_ESQ,Colo,0.831
+Ana Liz Correia,264,12,FEMUR_ESQ,Total,0.896
+Ana Beatriz Nogueira,265,13,LOMBAR,L1,0.916
+Ana Beatriz Nogueira,266,13,LOMBAR,L2,1.193
+Ana Beatriz Nogueira,267,13,LOMBAR,L3,0.940
+Ana Beatriz Nogueira,268,13,LOMBAR,L4,0.895
+Ana Beatriz Nogueira,269,13,LOMBAR,L1-L2,1.273
+Ana Beatriz Nogueira,270,13,LOMBAR,L1-L3,1.183
+Ana Beatriz Nogueira,271,13,LOMBAR,L1-L4,1.069
+Ana Beatriz Nogueira,272,13,LOMBAR,L2-L3,1.299
+Ana Beatriz Nogueira,273,13,LOMBAR,L2-L4,1.055
+Ana Beatriz Nogueira,274,13,LOMBAR,L3-L4,0.883
+Ana Beatriz Nogueira,275,13,CORPO_TOTAL,Cabeça,1.265
+Ana Beatriz Nogueira,276,13,CORPO_TOTAL,Braços,0.972
+Ana Beatriz Nogueira,277,13,CORPO_TOTAL,Pernas,0.809
+Ana Beatriz Nogueira,278,13,CORPO_TOTAL,Tronco,0.988
+Ana Beatriz Nogueira,279,13,CORPO_TOTAL,Costelas,1.049
+Ana Beatriz Nogueira,280,13,CORPO_TOTAL,Coluna,1.068
+Ana Beatriz Nogueira,281,13,CORPO_TOTAL,Pelve,1.161
+Ana Beatriz Nogueira,282,13,CORPO_TOTAL,Total,1.215
+Ana Beatriz Nogueira,283,13,FEMUR_DIR,Colo,1.088
+Ana Beatriz Nogueira,284,13,FEMUR_DIR,Total,1.253
+Ana Beatriz Nogueira,285,13,FEMUR_ESQ,Colo,1.070
+Ana Beatriz Nogueira,286,13,FEMUR_ESQ,Total,0.818
+Thiago Vieira,287,14,LOMBAR,L1,1.245
+Thiago Vieira,288,14,LOMBAR,L2,0.835
+Thiago Vieira,289,14,LOMBAR,L3,1.179
+Thiago Vieira,290,14,LOMBAR,L4,1.265
+Thiago Vieira,291,14,LOMBAR,L1-L2,0.904
+Thiago Vieira,292,14,LOMBAR,L1-L3,1.295
+Thiago Vieira,293,14,LOMBAR,L1-L4,0.939
+Thiago Vieira,294,14,LOMBAR,L2-L3,1.212
+Thiago Vieira,295,14,LOMBAR,L2-L4,1.002
+Thiago Vieira,296,14,LOMBAR,L3-L4,1.132
+Thiago Vieira,297,14,CORPO_TOTAL,Cabeça,1.244
+Thiago Vieira,298,14,CORPO_TOTAL,Braços,1.022
+Thiago Vieira,299,14,CORPO_TOTAL,Pernas,1.274
+Thiago Vieira,300,14,CORPO_TOTAL,Tronco,1.030
+Thiago Vieira,301,14,CORPO_TOTAL,Costelas,0.966
+Thiago Vieira,302,14,CORPO_TOTAL,Coluna,1.039
+Thiago Vieira,303,14,CORPO_TOTAL,Pelve,1.204
+Thiago Vieira,304,14,CORPO_TOTAL,Total,1.260
+Thiago Vieira,305,14,FEMUR_DIR,Colo,0.930
+Thiago Vieira,306,14,FEMUR_DIR,Total,1.171
+Thiago Vieira,307,14,FEMUR_ESQ,Colo,1.128
+Thiago Vieira,308,14,FEMUR_ESQ,Total,1.127
+Isis da Luz,309,15,LOMBAR,L1,1.088
+Isis da Luz,310,15,LOMBAR,L2,1.255
+Isis da Luz,311,15,LOMBAR,L3,1.186
+Isis da Luz,312,15,LOMBAR,L4,0.861
+Isis da Luz,313,15,LOMBAR,L1-L2,1.044
+Isis da Luz,314,15,LOMBAR,L1-L3,0.925
+Isis da Luz,315,15,LOMBAR,L1-L4,1.248
+Isis da Luz,316,15,LOMBAR,L2-L3,1.066
+Isis da Luz,317,15,LOMBAR,L2-L4,1.198
+Isis da Luz,318,15,LOMBAR,L3-L4,0.930
+Isis da Luz,319,15,CORPO_TOTAL,Cabeça,1.102
+Isis da Luz,320,15,CORPO_TOTAL,Braços,1.281
+Isis da Luz,321,15,CORPO_TOTAL,Pernas,0.944
+Isis da Luz,322,15,CORPO_TOTAL,Tronco,0.902
+Isis da Luz,323,15,CORPO_TOTAL,Costelas,0.843
+Isis da Luz,324,15,CORPO_TOTAL,Coluna,0.968
+Isis da Luz,325,15,CORPO_TOTAL,Pelve,0.922
+Isis da Luz,326,15,CORPO_TOTAL,Total,1.135
+Isis da Luz,327,15,FEMUR_DIR,Colo,1.098
+Isis da Luz,328,15,FEMUR_DIR,Total,0.864
+Isis da Luz,329,15,FEMUR_ESQ,Colo,0.819
+Isis da Luz,330,15,FEMUR_ESQ,Total,1.049
+Sarah da Costa,331,16,LOMBAR,L1,0.834
+Sarah da Costa,332,16,LOMBAR,L2,1.186
+Sarah da Costa,333,16,LOMBAR,L3,0.952
+Sarah da Costa,334,16,LOMBAR,L4,0.920
+Sarah da Costa,335,16,LOMBAR,L1-L2,1.017
+Sarah da Costa,336,16,LOMBAR,L1-L3,0.814
+Sarah da Costa,337,16,LOMBAR,L1-L4,0.817
+Sarah da Costa,338,16,LOMBAR,L2-L3,0.800
+Sarah da Costa,339,16,LOMBAR,L2-L4,1.218
+Sarah da Costa,340,16,LOMBAR,L3-L4,0.818
+Sarah da Costa,341,16,CORPO_TOTAL,Cabeça,0.931
+Sarah da Costa,342,16,CORPO_TOTAL,Braços,0.859
+Sarah da Costa,343,16,CORPO_TOTAL,Pernas,1.238
+Sarah da Costa,344,16,CORPO_TOTAL,Tronco,1.151
+Sarah da Costa,345,16,CORPO_TOTAL,Costelas,0.802
+Sarah da Costa,346,16,CORPO_TOTAL,Coluna,0.936
+Sarah da Costa,347,16,CORPO_TOTAL,Pelve,1.056
+Sarah da Costa,348,16,CORPO_TOTAL,Total,1.029
+Sarah da Costa,349,16,FEMUR_DIR,Colo,1.055
+Sarah da Costa,350,16,FEMUR_DIR,Total,1.116
+Sarah da Costa,351,16,FEMUR_ESQ,Colo,1.085
+Sarah da Costa,352,16,FEMUR_ESQ,Total,1.086
+Mirella Cirino,353,17,LOMBAR,L1,1.129
+Mirella Cirino,354,17,LOMBAR,L2,1.036
+Mirella Cirino,355,17,LOMBAR,L3,0.972
+Mirella Cirino,356,17,LOMBAR,L4,0.971
+Mirella Cirino,357,17,LOMBAR,L1-L2,0.942
+Mirella Cirino,358,17,LOMBAR,L1-L3,0.815
+Mirella Cirino,359,17,LOMBAR,L1-L4,0.965
+Mirella Cirino,360,17,LOMBAR,L2-L3,0.863
+Mirella Cirino,361,17,LOMBAR,L2-L4,1.209
+Mirella Cirino,362,17,LOMBAR,L3-L4,1.156
+Mirella Cirino,363,17,CORPO_TOTAL,Cabeça,0.976
+Mirella Cirino,364,17,CORPO_TOTAL,Braços,1.093
+Mirella Cirino,365,17,CORPO_TOTAL,Pernas,0.847
+Mirella Cirino,366,17,CORPO_TOTAL,Tronco,1.215
+Mirella Cirino,367,17,CORPO_TOTAL,Costelas,1.089
+Mirella Cirino,368,17,CORPO_TOTAL,Coluna,1.101
+Mirella Cirino,369,17,CORPO_TOTAL,Pelve,1.270
+Mirella Cirino,370,17,CORPO_TOTAL,Total,0.836
+Mirella Cirino,371,17,FEMUR_DIR,Colo,1.066
+Mirella Cirino,372,17,FEMUR_DIR,Total,0.888
+Mirella Cirino,373,17,FEMUR_ESQ,Colo,1.098
+Mirella Cirino,374,17,FEMUR_ESQ,Total,0.915
+Nicole Gonçalves,375,18,LOMBAR,L1,1.152
+Nicole Gonçalves,376,18,LOMBAR,L2,0.815
+Nicole Gonçalves,377,18,LOMBAR,L3,0.899
+Nicole Gonçalves,378,18,LOMBAR,L4,1.058
+Nicole Gonçalves,379,18,LOMBAR,L1-L2,1.232
+Nicole Gonçalves,380,18,LOMBAR,L1-L3,0.966
+Nicole Gonçalves,381,18,LOMBAR,L1-L4,1.172
+Nicole Gonçalves,382,18,LOMBAR,L2-L3,1.253
+Nicole Gonçalves,383,18,LOMBAR,L2-L4,0.810
+Nicole Gonçalves,384,18,LOMBAR,L3-L4,0.931
+Nicole Gonçalves,385,18,CORPO_TOTAL,Cabeça,1.165
+Nicole Gonçalves,386,18,CORPO_TOTAL,Braços,1.015
+Nicole Gonçalves,387,18,CORPO_TOTAL,Pernas,1.298
+Nicole Gonçalves,388,18,CORPO_TOTAL,Tronco,1.177
+Nicole Gonçalves,389,18,CORPO_TOTAL,Costelas,0.879
+Nicole Gonçalves,390,18,CORPO_TOTAL,Coluna,1.013
+Nicole Gonçalves,391,18,CORPO_TOTAL,Pelve,0.828
+Nicole Gonçalves,392,18,CORPO_TOTAL,Total,1.027
+Nicole Gonçalves,393,18,FEMUR_DIR,Colo,0.881
+Nicole Gonçalves,394,18,FEMUR_DIR,Total,1.044
+Nicole Gonçalves,395,18,FEMUR_ESQ,Colo,1.056
+Nicole Gonçalves,396,18,FEMUR_ESQ,Total,0.869
+Ana Laura Fogaça,397,19,LOMBAR,L1,0.883
+Ana Laura Fogaça,398,19,LOMBAR,L2,1.024
+Ana Laura Fogaça,399,19,LOMBAR,L3,1.294
+Ana Laura Fogaça,400,19,LOMBAR,L4,1.073
+Ana Laura Fogaça,401,19,LOMBAR,L1-L2,1.034
+Ana Laura Fogaça,402,19,LOMBAR,L1-L3,1.085
+Ana Laura Fogaça,403,19,LOMBAR,L1-L4,1.001
+Ana Laura Fogaça,404,19,LOMBAR,L2-L3,0.803
+Ana Laura Fogaça,405,19,LOMBAR,L2-L4,1.131
+Ana Laura Fogaça,406,19,LOMBAR,L3-L4,0.937
+Ana Laura Fogaça,407,19,CORPO_TOTAL,Cabeça,1.138
+Ana Laura Fogaça,408,19,CORPO_TOTAL,Braços,0.825
+Ana Laura Fogaça,409,19,CORPO_TOTAL,Pernas,1.141
+Ana Laura Fogaça,410,19,CORPO_TOTAL,Tronco,0.931
+Ana Laura Fogaça,411,19,CORPO_TOTAL,Costelas,1.203
+Ana Laura Fogaça,412,19,CORPO_TOTAL,Coluna,1.029
+Ana Laura Fogaça,413,19,CORPO_TOTAL,Pelve,1.266
+Ana Laura Fogaça,414,19,CORPO_TOTAL,Total,0.868
+Ana Laura Fogaça,415,19,FEMUR_DIR,Colo,1.231
+Ana Laura Fogaça,416,19,FEMUR_DIR,Total,1.199
+Ana Laura Fogaça,417,19,FEMUR_ESQ,Colo,0.899
+Ana Laura Fogaça,418,19,FEMUR_ESQ,Total,1.181
+Ana Carolina Novaes,419,20,LOMBAR,L1,0.931
+Ana Carolina Novaes,420,20,LOMBAR,L2,0.921
+Ana Carolina Novaes,421,20,LOMBAR,L3,0.926
+Ana Carolina Novaes,422,20,LOMBAR,L4,0.888
+Ana Carolina Novaes,423,20,LOMBAR,L1-L2,1.082
+Ana Carolina Novaes,424,20,LOMBAR,L1-L3,0.895
+Ana Carolina Novaes,425,20,LOMBAR,L1-L4,1.258
+Ana Carolina Novaes,426,20,LOMBAR,L2-L3,1.217
+Ana Carolina Novaes,427,20,LOMBAR,L2-L4,1.049
+Ana Carolina Novaes,428,20,LOMBAR,L3-L4,0.891
+Ana Carolina Novaes,429,20,CORPO_TOTAL,Cabeça,1.212
+Ana Carolina Novaes,430,20,CORPO_TOTAL,Braços,0.936
+Ana Carolina Novaes,431,20,CORPO_TOTAL,Pernas,1.285
+Ana Carolina Novaes,432,20,CORPO_TOTAL,Tronco,0.829
+Ana Carolina Novaes,433,20,CORPO_TOTAL,Costelas,1.138
+Ana Carolina Novaes,434,20,CORPO_TOTAL,Coluna,1.031
+Ana Carolina Novaes,435,20,CORPO_TOTAL,Pelve,0.955
+Ana Carolina Novaes,436,20,CORPO_TOTAL,Total,0.933
+Ana Carolina Novaes,437,20,FEMUR_DIR,Colo,1.009
+Ana Carolina Novaes,438,20,FEMUR_DIR,Total,1.019
+Ana Carolina Novaes,439,20,FEMUR_ESQ,Colo,0.819
+Ana Carolina Novaes,440,20,FEMUR_ESQ,Total,1.020
+Ágatha Nogueira,441,21,LOMBAR,L1,1.196
+Ágatha Nogueira,442,21,LOMBAR,L2,1.090
+Ágatha Nogueira,443,21,LOMBAR,L3,0.937
+Ágatha Nogueira,444,21,LOMBAR,L4,0.891
+Ágatha Nogueira,445,21,LOMBAR,L1-L2,0.952
+Ágatha Nogueira,446,21,LOMBAR,L1-L3,1.194
+Ágatha Nogueira,447,21,LOMBAR,L1-L4,1.259
+Ágatha Nogueira,448,21,LOMBAR,L2-L3,0.842
+Ágatha Nogueira,449,21,LOMBAR,L2-L4,0.892
+Ágatha Nogueira,450,21,LOMBAR,L3-L4,1.197
+Ágatha Nogueira,451,21,CORPO_TOTAL,Cabeça,1.142
+Ágatha Nogueira,452,21,CORPO_TOTAL,Braços,1.269
+Ágatha Nogueira,453,21,CORPO_TOTAL,Pernas,1.296
+Ágatha Nogueira,454,21,CORPO_TOTAL,Tronco,1.142
+Ágatha Nogueira,455,21,CORPO_TOTAL,Costelas,0.943
+Ágatha Nogueira,456,21,CORPO_TOTAL,Coluna,0.924
+Ágatha Nogueira,457,21,CORPO_TOTAL,Pelve,1.126
+Ágatha Nogueira,458,21,CORPO_TOTAL,Total,0.954
+Ágatha Nogueira,459,21,FEMUR_DIR,Colo,0.894
+Ágatha Nogueira,460,21,FEMUR_DIR,Total,0.807
+Ágatha Nogueira,461,21,FEMUR_ESQ,Colo,1.096
+Ágatha Nogueira,462,21,FEMUR_ESQ,Total,0.950
+Benicio Sousa,463,22,LOMBAR,L1,1.192
+Benicio Sousa,464,22,LOMBAR,L2,0.876
+Benicio Sousa,465,22,LOMBAR,L3,1.041
+Benicio Sousa,466,22,LOMBAR,L4,1.284
+Benicio Sousa,467,22,LOMBAR,L1-L2,0.915
+Benicio Sousa,468,22,LOMBAR,L1-L3,1.222
+Benicio Sousa,469,22,LOMBAR,L1-L4,1.039
+Benicio Sousa,470,22,LOMBAR,L2-L3,0.903
+Benicio Sousa,471,22,LOMBAR,L2-L4,1.225
+Benicio Sousa,472,22,LOMBAR,L3-L4,0.877
+Benicio Sousa,473,22,CORPO_TOTAL,Cabeça,1.018
+Benicio Sousa,474,22,CORPO_TOTAL,Braços,0.814
+Benicio Sousa,475,22,CORPO_TOTAL,Pernas,1.098
+Benicio Sousa,476,22,CORPO_TOTAL,Tronco,0.856
+Benicio Sousa,477,22,CORPO_TOTAL,Costelas,1.108
+Benicio Sousa,478,22,CORPO_TOTAL,Coluna,1.065
+Benicio Sousa,479,22,CORPO_TOTAL,Pelve,1.053
+Benicio Sousa,480,22,CORPO_TOTAL,Total,0.986
+Benicio Sousa,481,22,FEMUR_DIR,Colo,1.175
+Benicio Sousa,482,22,FEMUR_DIR,Total,0.868
+Benicio Sousa,483,22,FEMUR_ESQ,Colo,1.199
+Benicio Sousa,484,22,FEMUR_ESQ,Total,1.277
+Maria Cecília Fonseca,485,23,LOMBAR,L1,0.847
+Maria Cecília Fonseca,486,23,LOMBAR,L2,0.813
+Maria Cecília Fonseca,487,23,LOMBAR,L3,1.190
+Maria Cecília Fonseca,488,23,LOMBAR,L4,0.932
+Maria Cecília Fonseca,489,23,LOMBAR,L1-L2,0.958
+Maria Cecília Fonseca,490,23,LOMBAR,L1-L3,1.062
+Maria Cecília Fonseca,491,23,LOMBAR,L1-L4,0.904
+Maria Cecília Fonseca,492,23,LOMBAR,L2-L3,1.224
+Maria Cecília Fonseca,493,23,LOMBAR,L2-L4,1.027
+Maria Cecília Fonseca,494,23,LOMBAR,L3-L4,1.167
+Maria Cecília Fonseca,495,23,CORPO_TOTAL,Cabeça,0.914
+Maria Cecília Fonseca,496,23,CORPO_TOTAL,Braços,1.270
+Maria Cecília Fonseca,497,23,CORPO_TOTAL,Pernas,0.878
+Maria Cecília Fonseca,498,23,CORPO_TOTAL,Tronco,1.008
+Maria Cecília Fonseca,499,23,CORPO_TOTAL,Costelas,1.240
+Maria Cecília Fonseca,500,23,CORPO_TOTAL,Coluna,1.164
+Maria Cecília Fonseca,501,23,CORPO_TOTAL,Pelve,0.867
+Maria Cecília Fonseca,502,23,CORPO_TOTAL,Total,1.142
+Maria Cecília Fonseca,503,23,FEMUR_DIR,Colo,1.276
+Maria Cecília Fonseca,504,23,FEMUR_DIR,Total,1.043
+Maria Cecília Fonseca,505,23,FEMUR_ESQ,Colo,0.811
+Maria Cecília Fonseca,506,23,FEMUR_ESQ,Total,1.170
+Julia Cirino,507,24,LOMBAR,L1,0.991
+Julia Cirino,508,24,LOMBAR,L2,1.071
+Julia Cirino,509,24,LOMBAR,L3,1.093
+Julia Cirino,510,24,LOMBAR,L4,1.198
+Julia Cirino,511,24,LOMBAR,L1-L2,0.868
+Julia Cirino,512,24,LOMBAR,L1-L3,0.863
+Julia Cirino,513,24,LOMBAR,L1-L4,0.882
+Julia Cirino,514,24,LOMBAR,L2-L3,0.935
+Julia Cirino,515,24,LOMBAR,L2-L4,0.854
+Julia Cirino,516,24,LOMBAR,L3-L4,1.259
+Julia Cirino,517,24,CORPO_TOTAL,Cabeça,0.847
+Julia Cirino,518,24,CORPO_TOTAL,Braços,0.945
+Julia Cirino,519,24,CORPO_TOTAL,Pernas,1.054
+Julia Cirino,520,24,CORPO_TOTAL,Tronco,1.058
+Julia Cirino,521,24,CORPO_TOTAL,Costelas,0.822
+Julia Cirino,522,24,CORPO_TOTAL,Coluna,0.895
+Julia Cirino,523,24,CORPO_TOTAL,Pelve,0.941
+Julia Cirino,524,24,CORPO_TOTAL,Total,1.233
+Julia Cirino,525,24,FEMUR_DIR,Colo,0.923
+Julia Cirino,526,24,FEMUR_DIR,Total,1.231
+Julia Cirino,527,24,FEMUR_ESQ,Colo,1.220
+Julia Cirino,528,24,FEMUR_ESQ,Total,0.923
+Théo da Costa,529,25,LOMBAR,L1,0.932
+Théo da Costa,530,25,LOMBAR,L2,0.977
+Théo da Costa,531,25,LOMBAR,L3,1.201
+Théo da Costa,532,25,LOMBAR,L4,1.123
+Théo da Costa,533,25,LOMBAR,L1-L2,0.904
+Théo da Costa,534,25,LOMBAR,L1-L3,0.854
+Théo da Costa,535,25,LOMBAR,L1-L4,1.202
+Théo da Costa,536,25,LOMBAR,L2-L3,1.187
+Théo da Costa,537,25,LOMBAR,L2-L4,1.046
+Théo da Costa,538,25,LOMBAR,L3-L4,1.137
+Théo da Costa,539,25,CORPO_TOTAL,Cabeça,0.932
+Théo da Costa,540,25,CORPO_TOTAL,Braços,0.853
+Théo da Costa,541,25,CORPO_TOTAL,Pernas,1.217
+Théo da Costa,542,25,CORPO_TOTAL,Tronco,1.103
+Théo da Costa,543,25,CORPO_TOTAL,Costelas,1.085
+Théo da Costa,544,25,CORPO_TOTAL,Coluna,1.299
+Théo da Costa,545,25,CORPO_TOTAL,Pelve,0.864
+Théo da Costa,546,25,CORPO_TOTAL,Total,1.207
+Théo da Costa,547,25,FEMUR_DIR,Colo,1.275
+Théo da Costa,548,25,FEMUR_DIR,Total,1.221
+Théo da Costa,549,25,FEMUR_ESQ,Colo,1.139
+Théo da Costa,550,25,FEMUR_ESQ,Total,0.811
+Kevin Sá,551,26,LOMBAR,L1,0.853
+Kevin Sá,552,26,LOMBAR,L2,0.912
+Kevin Sá,553,26,LOMBAR,L3,1.003
+Kevin Sá,554,26,LOMBAR,L4,0.887
+Kevin Sá,555,26,LOMBAR,L1-L2,1.200
+Kevin Sá,556,26,LOMBAR,L1-L3,0.841
+Kevin Sá,557,26,LOMBAR,L1-L4,0.991
+Kevin Sá,558,26,LOMBAR,L2-L3,1.013
+Kevin Sá,559,26,LOMBAR,L2-L4,0.963
+Kevin Sá,560,26,LOMBAR,L3-L4,1.115
+Kevin Sá,561,26,CORPO_TOTAL,Cabeça,1.269
+Kevin Sá,562,26,CORPO_TOTAL,Braços,1.038
+Kevin Sá,563,26,CORPO_TOTAL,Pernas,0.866
+Kevin Sá,564,26,CORPO_TOTAL,Tronco,0.957
+Kevin Sá,565,26,CORPO_TOTAL,Costelas,1.264
+Kevin Sá,566,26,CORPO_TOTAL,Coluna,1.098
+Kevin Sá,567,26,CORPO_TOTAL,Pelve,1.242
+Kevin Sá,568,26,CORPO_TOTAL,Total,1.086
+Kevin Sá,569,26,FEMUR_DIR,Colo,1.242
+Kevin Sá,570,26,FEMUR_DIR,Total,1.095
+Kevin Sá,571,26,FEMUR_ESQ,Colo,1.275
+Kevin Sá,572,26,FEMUR_ESQ,Total,0.866

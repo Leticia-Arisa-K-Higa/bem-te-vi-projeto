@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:projeto/Core/Constants/appStrings.dart';
+import 'package:projeto/Core/Providers/patientProvider.dart';
 import 'package:projeto/Core/Services/api_service.dart';
 import 'package:projeto/Presentation/CommonWidgets/appDrawer.dart';
 import 'package:projeto/Presentation/CommonWidgets/customTextField.dart';
+import 'package:provider/provider.dart';
 
 class AnmeneseForm extends StatefulWidget {
   const AnmeneseForm({super.key});
@@ -25,6 +27,46 @@ class _AnmeneseFormState extends State<AnmeneseForm> {
 
   DateTime? _examDate;
   DateTime? _patientBornDate;
+
+  @override
+  void initState() {
+    super.initState();
+
+    // Preencher dados automaticamente se houver paciente selecionado
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final patientProvider = Provider.of<PatientProvider>(
+        context,
+        listen: false,
+      );
+
+      // DEBUG: Verifique no console se os dados estão aparecendo aqui
+      print("DEBUG ANAMNESE - Nome: ${patientProvider.nome}");
+      print("DEBUG ANAMNESE - Tel: ${patientProvider.telefone}");
+      print("DEBUG ANAMNESE - Data: ${patientProvider.dataNascimento}");
+
+      if (patientProvider.nome != null) {
+        setState(() {
+          _patientNameController.text = patientProvider.nome!;
+          _patientCelController.text = patientProvider.telefone ?? '';
+          _patientEmailController.text = patientProvider.email ?? '';
+
+          // Converter Data de Nascimento (YYYY-MM-DD para DateTime e Texto)
+          if (patientProvider.dataNascimento != null) {
+            try {
+              _patientBornDate = DateTime.parse(
+                patientProvider.dataNascimento!,
+              );
+              _patientBornDateController.text = DateFormat(
+                'dd/MM/yyyy',
+              ).format(_patientBornDate!);
+            } catch (e) {
+              print("Erro ao converter data: $e");
+            }
+          }
+        });
+      }
+    });
+  }
 
   @override
   void dispose() {
@@ -58,28 +100,37 @@ class _AnmeneseFormState extends State<AnmeneseForm> {
         comments: _comentsController.text,
       );
 
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Ananese salva com sucesso!'),
-          backgroundColor: Colors.green,
-        ),
-      );
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Anamnese salva com sucesso!'),
+            backgroundColor: Colors.green,
+          ),
+        );
+      }
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Erro: ${e.toString()}'),
-          backgroundColor: Colors.red,
-        ),
-      );
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Erro: ${e.toString()}'),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
     } finally {
-      setState(() {
-        _isLoading = false;
-      });
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    // Precisamos acessar o provider aqui no build para usar nas Keys
+    final provider = Provider.of<PatientProvider>(context);
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -120,7 +171,8 @@ class _AnmeneseFormState extends State<AnmeneseForm> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                _buildPatientDates(),
+                // Passamos o provider para o widget filho
+                _buildPatientDates(provider),
                 const SizedBox(height: 24),
                 _buildComentsArea(),
                 const SizedBox(height: 32),
@@ -137,7 +189,7 @@ class _AnmeneseFormState extends State<AnmeneseForm> {
                           elevation: 5,
                         ),
                         child: const Text(
-                          'Salvar Ananese',
+                          'Salvar Anamnese',
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -174,7 +226,7 @@ class _AnmeneseFormState extends State<AnmeneseForm> {
     );
   }
 
-  Widget _buildPatientDates() {
+  Widget _buildPatientDates(PatientProvider provider) {
     return Card(
       color: AppColors.emerald,
       elevation: 4,
@@ -190,6 +242,8 @@ class _AnmeneseFormState extends State<AnmeneseForm> {
                 Expanded(
                   flex: 2,
                   child: TextFormField(
+                    // KEY para forçar atualização do Nome
+                    key: Key(provider.nome ?? 'nome_field'),
                     controller: _patientNameController,
                     style: const TextStyle(color: Colors.white),
                     decoration: const InputDecoration(
@@ -267,6 +321,8 @@ class _AnmeneseFormState extends State<AnmeneseForm> {
                 Expanded(
                   flex: 2,
                   child: TextFormField(
+                    // KEY para forçar atualização do Celular
+                    key: Key(provider.telefone ?? 'cel_field'),
                     controller: _patientCelController,
                     style: const TextStyle(color: Colors.white),
                     decoration: const InputDecoration(
@@ -292,6 +348,8 @@ class _AnmeneseFormState extends State<AnmeneseForm> {
                 Expanded(
                   flex: 2,
                   child: TextFormField(
+                    // KEY para forçar atualização do Email
+                    key: Key(provider.email ?? 'email_field'),
                     controller: _patientEmailController,
                     style: const TextStyle(color: Colors.white),
                     decoration: const InputDecoration(
@@ -320,6 +378,8 @@ class _AnmeneseFormState extends State<AnmeneseForm> {
             ),
             const SizedBox(height: 24),
             TextFormField(
+              // KEY para forçar atualização da Data de Nascimento
+              key: Key(provider.dataNascimento ?? 'nasc_field'),
               controller: _patientBornDateController,
               readOnly: true,
               style: const TextStyle(color: Colors.white),

@@ -4,11 +4,18 @@ import 'package:projeto/Core/Constants/appStrings.dart';
 import 'package:projeto/Core/Providers/asiaFormProvider.dart';
 import 'package:projeto/Core/Providers/eletroFormProvider.dart';
 import 'package:projeto/Core/Providers/meemFormProvider.dart';
+import 'package:projeto/Core/Providers/patientProvider.dart';
 import 'package:projeto/Presentation/Screens/ananmeseForm.dart';
 import 'package:projeto/Presentation/Screens/asiaForm.dart';
+import 'package:projeto/Presentation/Screens/cadastro.dart';
+import 'package:projeto/Presentation/Screens/dex.dart';
 import 'package:projeto/Presentation/Screens/eletroForm.dart';
 import 'package:projeto/Presentation/Screens/gasForm.dart';
+import 'package:projeto/Presentation/Screens/login.dart';
 import 'package:projeto/Presentation/Screens/meemForm.dart';
+import 'package:projeto/Presentation/Screens/pacienteCadastro.dart';
+import 'package:projeto/Presentation/Screens/pacienteSearch.dart';
+import 'package:projeto/Presentation/Screens/selecao.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -22,6 +29,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (context) => PatientProvider()),
         ChangeNotifierProvider(create: (context) => AsiaFormProvider()),
         ChangeNotifierProvider(create: (context) => MeemFormProvider()),
         ChangeNotifierProvider(create: (context) => MeemFormProvider()),
@@ -89,13 +97,19 @@ class MyApp extends StatelessWidget {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: const [Locale('pt', 'BR')],
-        home: const AsiaForm(),
+        home: const LoginScreen(),
         routes: {
+          '/login': (context) => const LoginScreen(),
+          '/signup': (context) => const SignupScreen(),
+          '/selecao': (context) => const PatientSelectionScreen(),
+          '/pacienteCadastro': (context) => const PatientRegistrationScreen(),
+          '/pacienteSearch': (context) => const PatientSearchDialog(),
           '/asia_form': (context) => const AsiaForm(),
           '/gas_form': (context) => const GasForm(),
           '/anmenese_form': (context) => const AnmeneseForm(),
           '/meem_form': (context) => const MeemFormScreen(),
           '/eletro_form': (context) => const EletrodiagnosticoScreen(),
+          '/dex_form': (context) => const DensitometryFormPage(),
         },
         debugShowCheckedModeBanner: false,
       ),

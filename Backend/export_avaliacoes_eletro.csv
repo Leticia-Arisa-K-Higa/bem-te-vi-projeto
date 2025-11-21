@@ -1,0 +1,26 @@
+nome_completo,id,paciente_id,data_exame,nome_examinador,nome_equipamento,created_at
+Amanda Fernandes,6,1,2025-09-11,Natália Monteiro,EMG-v2,2025-10-29 14:11:18.628921-03:00
+Sr. Noah Pacheco,7,2,2025-08-21,Ana Julia Vieira,BioEletro Plus,2025-10-29 14:11:18.876975-03:00
+Ana Luiza Brito,8,3,2025-09-16,Aurora Azevedo,NeuroMaster 3000,2025-10-29 14:11:19.120228-03:00
+Cecília Brito,9,4,2025-08-15,Emanuel das Neves,EMG-v2,2025-10-29 14:11:19.365105-03:00
+Dr. Luiz Otávio Gomes,10,5,2025-09-23,Francisco Garcia,EMG-v2,2025-10-29 14:11:19.610923-03:00
+Lucas Silveira,11,6,2025-08-24,João Gabriel Castro,EMG-v2,2025-10-29 14:11:19.856768-03:00
+Joaquim Silveira,12,7,2025-08-22,Eduardo Garcia,NeuroMaster 3000,2025-10-29 14:11:20.100794-03:00
+Srta. Manuella da Rosa,13,8,2025-09-08,Eduardo Pimenta,NeuroMaster 3000,2025-10-29 14:11:20.343323-03:00
+Pedro Lucas Sales,14,9,2025-09-14,Maria Isis Montenegro,EMG-v2,2025-10-29 14:11:20.585753-03:00
+Davi Luiz Costa,15,10,2025-09-21,Luiza Cavalcanti,NeuroMaster 3000,2025-10-29 14:11:20.831872-03:00
+Ana Liz Correia,16,11,2025-08-21,Vinícius Castro,NeuroMaster 3000,2025-10-29 14:11:21.075053-03:00
+Ana Beatriz Nogueira,17,12,2025-09-22,Bárbara Cirino,BioEletro Plus,2025-10-29 14:11:21.317985-03:00
+Thiago Vieira,18,13,2025-09-14,Theo da Mata,NeuroMaster 3000,2025-10-29 14:11:21.561930-03:00
+Isis da Luz,19,14,2025-08-31,Theodoro das Neves,NeuroMaster 3000,2025-10-29 14:11:21.806012-03:00
+Sarah da Costa,20,15,2025-09-25,Rafael Aparecida,EMG-v2,2025-10-29 14:11:22.048194-03:00
+Mirella Cirino,21,16,2025-09-11,Maria Eduarda Gonçalves,BioEletro Plus,2025-10-29 14:11:22.292064-03:00
+Nicole Gonçalves,22,17,2025-09-29,Maria Isis da Luz,BioEletro Plus,2025-10-29 14:11:22.536012-03:00
+Ana Laura Fogaça,23,18,2025-08-24,Srta. Nicole Machado,BioEletro Plus,2025-10-29 14:11:22.777843-03:00
+Ana Carolina Novaes,24,19,2025-08-30,Alana das Neves,EMG-v2,2025-10-29 14:11:23.021808-03:00
+Ágatha Nogueira,25,20,2025-09-01,José Vieira,NeuroMaster 3000,2025-10-29 14:11:23.265352-03:00
+Benicio Sousa,26,21,2025-08-21,Apollo Borges,BioEletro Plus,2025-10-29 14:11:23.509057-03:00
+Maria Cecília Fonseca,27,22,2025-08-26,Sra. Antonella Câmara,BioEletro Plus,2025-10-29 14:11:23.754985-03:00
+Julia Cirino,28,23,2025-09-24,Brayan Nascimento,BioEletro Plus,2025-10-29 14:11:24.000062-03:00
+Théo da Costa,29,24,2025-09-27,Bárbara Novaes,NeuroMaster 3000,2025-10-29 14:11:24.242043-03:00
+Kevin Sá,30,25,2025-09-28,Augusto Lopes,NeuroMaster 3000,2025-10-29 14:11:24.488112-03:00

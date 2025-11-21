@@ -11,7 +11,7 @@ class AsiaFormProvider extends ChangeNotifier {
   IscnsciResult? get result => _result;
 
   // Variáveis antigas removidas e novas adicionadas
-  String _patientName = '';
+  String patientName = '';
   String _examDate = '';
   String _examinerName = '';
 
@@ -65,7 +65,7 @@ class AsiaFormProvider extends ChangeNotifier {
 
   // Métodos "setter" para os novos campos
   void setPatientName(String value) {
-    _patientName = value;
+    patientName = value;
     notifyListeners();
   }
 
@@ -203,7 +203,7 @@ class AsiaFormProvider extends ChangeNotifier {
     }
 
     return Exam(
-      patientName: _patientName,
+      patientName: patientName,
       examDate: _examDate,
       examinerName: _examinerName,
       right: ExamSide(
@@ -257,7 +257,7 @@ class AsiaFormProvider extends ChangeNotifier {
     _comments = '';
 
     // ATUALIZADO AQUI
-    _patientName = '';
+    patientName = '';
     _examDate = '';
     _examinerName = '';
 

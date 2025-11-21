@@ -1,0 +1,92 @@
+[
+  {
+    "patientName": "Amanda Fernandes",
+    "examDate": "2025-11-21",
+    "weight": 62.5,
+    "height": 1.65,
+    "imc": 22.96,
+    "lumbarRegions": [
+      {"regiao": "L1", "bmd": 1.060}, {"regiao": "L2", "bmd": 1.086},
+      {"regiao": "L3", "bmd": 1.181}, {"regiao": "L4", "bmd": 1.068},
+      {"regiao": "L1-L2", "bmd": 1.074}, {"regiao": "L1-L3", "bmd": 1.112},
+      {"regiao": "L1-L4", "bmd": 1.099}, {"regiao": "L2-L3", "bmd": 1.135},
+      {"regiao": "L2-L4", "bmd": 1.109}, {"regiao": "L3-L4", "bmd": 1.119}
+    ],
+    "lumbarTrend": {"data": "2024-06-14", "idade": 34, "bmd": 1.099},
+    "bodyRegions": [
+      {"regiao": "Cabeça", "bmd": 2.271}, {"regiao": "Braços", "bmd": 0.940},
+      {"regiao": "Pernas", "bmd": 1.119}, {"regiao": "Tronco", "bmd": 0.956},
+      {"regiao": "Costelas", "bmd": 0.807}, {"regiao": "Coluna", "bmd": 1.119},
+      {"regiao": "Pelve", "bmd": 1.019}, {"regiao": "Total", "bmd": 1.151}
+    ],
+    "bodyTrend": {"data": "2024-06-14", "idade": 34, "bmd": 1.151},
+    "compositionTrend": {
+      "data": "2024-06-14", "idade": 34, "tecido_percent": 20.8,
+      "massa_total": 77.3, "gordo": 15.479, "magro": 59.109
+    },
+    "femurRightRegions": [{"regiao": "Colo", "bmd": 0.865}, {"regiao": "Total", "bmd": 0.950}],
+    "femurRightTrend": {"data": "2024-06-14", "idade": 34, "bmd": 0.865},
+    "femurLeftRegions": [{"regiao": "Colo", "bmd": 0.872}, {"regiao": "Total", "bmd": 0.960}],
+    "femurLeftTrend": {"data": "2024-06-14", "idade": 34, "bmd": 0.872}
+  },
+  {
+    "patientName": "Sr. Noah Pacheco",
+    "examDate": "2025-11-21",
+    "weight": 78.0,
+    "height": 1.72,
+    "imc": 26.36,
+    "lumbarRegions": [
+      {"regiao": "L1", "bmd": 0.950}, {"regiao": "L2", "bmd": 0.980},
+      {"regiao": "L3", "bmd": 1.020}, {"regiao": "L4", "bmd": 0.990},
+      {"regiao": "L1-L2", "bmd": 0.965}, {"regiao": "L1-L3", "bmd": 0.983},
+      {"regiao": "L1-L4", "bmd": 0.985}, {"regiao": "L2-L3", "bmd": 1.000},
+      {"regiao": "L2-L4", "bmd": 0.996}, {"regiao": "L3-L4", "bmd": 1.005}
+    ],
+    "lumbarTrend": {"data": "2023-05-10", "idade": 69, "bmd": 0.970},
+    "bodyRegions": [
+      {"regiao": "Cabeça", "bmd": 2.100}, {"regiao": "Braços", "bmd": 0.890},
+      {"regiao": "Pernas", "bmd": 1.050}, {"regiao": "Tronco", "bmd": 0.920},
+      {"regiao": "Costelas", "bmd": 0.750}, {"regiao": "Coluna", "bmd": 1.050},
+      {"regiao": "Pelve", "bmd": 0.980}, {"regiao": "Total", "bmd": 1.100}
+    ],
+    "bodyTrend": {"data": "2023-05-10", "idade": 69, "bmd": 1.080},
+    "compositionTrend": {
+      "data": "2023-05-10", "idade": 69, "tecido_percent": 25.5,
+      "massa_total": 78.0, "gordo": 19.890, "magro": 55.000
+    },
+    "femurRightRegions": [{"regiao": "Colo", "bmd": 0.780}, {"regiao": "Total", "bmd": 0.850}],
+    "femurRightTrend": {"data": "2023-05-10", "idade": 69, "bmd": 0.770},
+    "femurLeftRegions": [{"regiao": "Colo", "bmd": 0.790}, {"regiao": "Total", "bmd": 0.860}],
+    "femurLeftTrend": {"data": "2023-05-10", "idade": 69, "bmd": 0.780}
+  },
+  {
+    "patientName": "Kevin Sá",
+    "examDate": "2025-11-21",
+    "weight": 82.0,
+    "height": 1.81,
+    "imc": 25.03,
+    "lumbarRegions": [
+      {"regiao": "L1", "bmd": 1.200}, {"regiao": "L2", "bmd": 1.250},
+      {"regiao": "L3", "bmd": 1.300}, {"regiao": "L4", "bmd": 1.280},
+      {"regiao": "L1-L2", "bmd": 1.225}, {"regiao": "L1-L3", "bmd": 1.250},
+      {"regiao": "L1-L4", "bmd": 1.257}, {"regiao": "L2-L3", "bmd": 1.275},
+      {"regiao": "L2-L4", "bmd": 1.276}, {"regiao": "L3-L4", "bmd": 1.290}
+    ],
+    "lumbarTrend": {"data": "2022-01-15", "idade": 30, "bmd": 1.240},
+    "bodyRegions": [
+      {"regiao": "Cabeça", "bmd": 2.400}, {"regiao": "Braços", "bmd": 1.100},
+      {"regiao": "Pernas", "bmd": 1.300}, {"regiao": "Tronco", "bmd": 1.150},
+      {"regiao": "Costelas", "bmd": 0.950}, {"regiao": "Coluna", "bmd": 1.300},
+      {"regiao": "Pelve", "bmd": 1.200}, {"regiao": "Total", "bmd": 1.350}
+    ],
+    "bodyTrend": {"data": "2022-01-15", "idade": 30, "bmd": 1.320},
+    "compositionTrend": {
+      "data": "2022-01-15", "idade": 30, "tecido_percent": 18.5,
+      "massa_total": 82.0, "gordo": 15.170, "magro": 63.500
+    },
+    "femurRightRegions": [{"regiao": "Colo", "bmd": 1.050}, {"regiao": "Total", "bmd": 1.150}],
+    "femurRightTrend": {"data": "2022-01-15", "idade": 30, "bmd": 1.020},
+    "femurLeftRegions": [{"regiao": "Colo", "bmd": 1.040}, {"regiao": "Total", "bmd": 1.140}],
+    "femurLeftTrend": {"data": "2022-01-15", "idade": 30, "bmd": 1.010}
+  }
+]

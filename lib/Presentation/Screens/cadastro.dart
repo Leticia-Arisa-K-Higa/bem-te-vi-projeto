@@ -1,18 +1,20 @@
-import 'dart:convert'; // IMPORTANTE: Para converter JSON
+import 'dart:convert'; // Importar
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http; // IMPORTANTE: Para fazer a requisição
+import 'package:http/http.dart' as http; // Importar
 import 'package:projeto/Core/Constants/appStrings.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignupScreen> createState() => _SignupScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignupScreenState extends State<SignupScreen> {
+  final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
 
   String? _selectedProfile;
   final List<String> _profiles = [
@@ -21,55 +23,57 @@ class _LoginScreenState extends State<LoginScreen> {
     'Paciente',
   ];
 
-  bool _isLoading = false; // Variável para controlar o loading
+  bool _isLoading = false;
 
-  Future<void> _login() async {
-    if (_emailController.text.isEmpty ||
-        _passwordController.text.isEmpty ||
-        _selectedProfile == null) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text("Preencha todos os campos e selecione um perfil"),
-        ),
-      );
+  Future<void> _register() async {
+    // Validação Básica
+    if (_nameController.text.isEmpty ||
+        _emailController.text.isEmpty ||
+        _passwordController.text.isEmpty) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text("Preencha todos os campos")));
+      return;
+    }
+    if (_passwordController.text != _confirmPasswordController.text) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text("As senhas não conferem")));
       return;
     }
 
-    setState(() {
-      _isLoading = true;
-    });
+    setState(() => _isLoading = true);
 
-    final url = Uri.parse('http://localhost:8000/api/v1/login');
+    final url = Uri.parse('http://localhost:8000/api/v1/register');
 
     try {
       final response = await http.post(
         url,
         headers: {"Content-Type": "application/json"},
         body: jsonEncode({
+          "name": _nameController.text,
           "email": _emailController.text,
           "password": _passwordController.text,
-          "profile": _selectedProfile,
+          "profile": _selectedProfile ?? "Fisioterapeuta", // Default se nulo
         }),
       );
 
-      if (response.statusCode == 200) {
-        // SUCESSO
-        final data = jsonDecode(response.body);
-        print("Login Sucesso: ${data['nome']}");
-
-        if (mounted) {
-          // Navega para a tela principal (Ex: AsiaForm)
-          // Aqui você pode salvar o user_id se precisar usar depois
-          Navigator.pushReplacementNamed(context, '/selecao');
-        }
-      } else {
-        // ERRO (401, etc)
+      if (response.statusCode == 201) {
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
-              backgroundColor: Colors.red,
-              content: Text("Email, senha ou perfil incorretos."),
+              backgroundColor: Colors.green,
+              content: Text("Cadastro realizado! Faça login."),
             ),
+          );
+          Navigator.pop(context); // Volta para o Login
+        }
+      } else {
+        // Erro vindo do Python (ex: Email duplicado)
+        final msg = jsonDecode(response.body)['detail'] ?? "Erro ao cadastrar";
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(backgroundColor: Colors.red, content: Text(msg)),
           );
         }
       }
@@ -80,22 +84,29 @@ class _LoginScreenState extends State<LoginScreen> {
         ).showSnackBar(SnackBar(content: Text("Erro de conexão: $e")));
       }
     } finally {
-      setState(() {
-        _isLoading = false;
-      });
+      setState(() => _isLoading = false);
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
       body: Container(
         width: double.infinity,
         height: double.infinity,
         decoration: const BoxDecoration(color: AppColors.emerald),
         child: Center(
           child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 60),
             child: Card(
               elevation: 8,
               shape: RoundedRectangleBorder(
@@ -108,31 +119,34 @@ class _LoginScreenState extends State<LoginScreen> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     const Text(
-                      "Bem-te-vi",
+                      "Criar Conta",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 28,
+                        fontSize: 24,
                         fontWeight: FontWeight.bold,
                         color: AppColors.emerald,
                       ),
                     ),
-                    const SizedBox(height: 8),
-                    const Text(
-                      "Acesse sua conta",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 16, color: Colors.grey),
-                    ),
                     const SizedBox(height: 30),
+
+                    _buildLabel("Nome Completo"),
+                    const SizedBox(height: 8),
+                    _buildTextField(
+                      controller: _nameController,
+                      hint: "Seu nome",
+                    ),
+
+                    const SizedBox(height: 16),
 
                     _buildLabel("Email"),
                     const SizedBox(height: 8),
                     _buildTextField(
                       controller: _emailController,
-                      hint: "exemplo@email.com",
+                      hint: "seu@email.com",
                       keyboardType: TextInputType.emailAddress,
                     ),
 
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 16),
 
                     _buildLabel("Senha"),
                     const SizedBox(height: 8),
@@ -141,8 +155,19 @@ class _LoginScreenState extends State<LoginScreen> {
                       isPassword: true,
                     ),
 
+                    const SizedBox(height: 16),
+
+                    _buildLabel("Confirmar Senha"),
+                    const SizedBox(height: 8),
+                    _buildTextField(
+                      controller: _confirmPasswordController,
+                      isPassword: true,
+                    ),
+
                     const SizedBox(height: 20),
 
+                    _buildLabel("Perfil"),
+                    const SizedBox(height: 8),
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 12),
                       decoration: BoxDecoration(
@@ -154,11 +179,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           isExpanded: true,
                           value: _selectedProfile,
                           hint: const Text(
-                            "Selecione seu perfil",
+                            "Selecione o tipo de perfil",
                             style: TextStyle(color: Colors.white),
                           ),
-                          dropdownColor:
-                              AppColors.emerald, // Fundo do dropdown aberto
+                          dropdownColor: AppColors.emerald,
                           iconEnabledColor: Colors.white,
                           items: _profiles.map((String value) {
                             return DropdownMenuItem<String>(
@@ -181,9 +205,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     const SizedBox(height: 30),
 
                     ElevatedButton(
-                      onPressed: _isLoading
-                          ? null
-                          : _login, // Chama a função de login
+                      onPressed: _isLoading ? null : _register, // Lógica aqui
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.emerald,
                         foregroundColor: Colors.white,
@@ -202,34 +224,12 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             )
                           : const Text(
-                              "Entrar",
+                              "Cadastrar",
                               style: TextStyle(
-                                fontSize: 20,
+                                fontSize: 18,
                                 color: Colors.white,
                               ),
                             ),
-                    ),
-
-                    const SizedBox(height: 20),
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text("Não tem conta? "),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(context, '/signup');
-                          },
-                          child: const Text(
-                            "Cadastre-se",
-                            style: TextStyle(
-                              color: Color(0xFF2E7D32),
-                              fontWeight: FontWeight.bold,
-                              decoration: TextDecoration.underline,
-                            ),
-                          ),
-                        ),
-                      ],
                     ),
                   ],
                 ),
@@ -269,7 +269,7 @@ class _LoginScreenState extends State<LoginScreen> {
         fillColor: const Color(0xFFF0EFEF),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: AppColors.emerald),
+          borderSide: BorderSide.none,
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.0),
