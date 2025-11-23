@@ -131,7 +131,7 @@ class AppStrings {
   };
 
   // GAS form
-  static const String gasFormTitle0 = 'Goal Attainment Scale (GAS)';
+  static const String gasFormTitle0 = 'GAS';
   static const String gasFormTitle1 =
       'PROSPECÇÃO E CUMPRIMENTO DE PLANO DE INTERVENÇÃO';
   static const String gasFormTitle2 = 'DESCRITIVO DO ALCANCE DE METAS';

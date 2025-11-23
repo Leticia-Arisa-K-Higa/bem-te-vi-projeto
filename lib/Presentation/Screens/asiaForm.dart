@@ -343,7 +343,7 @@ class AsiaForm extends StatelessWidget {
                 const Expanded(
                   flex: 2,
                   child: Text(
-                    'Right:',
+                    'Direita:',
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                 ),
@@ -370,7 +370,7 @@ class AsiaForm extends StatelessWidget {
                 const Expanded(
                   flex: 2,
                   child: Text(
-                    'Left:',
+                    'Esquerda:',
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                 ),
